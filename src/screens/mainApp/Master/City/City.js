@@ -100,7 +100,7 @@ export default function Language() {
 						<div>
 							<div className={styles.searchBar}>
 
-								<SearchIcon style={{color:'gray'}}/>
+								{/* <SearchIcon style={{color:'gray'}}/> */}
 
 								<TextField
 									id="standard-search"

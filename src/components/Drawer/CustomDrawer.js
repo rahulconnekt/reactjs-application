@@ -22,6 +22,9 @@ import press from "./images/press@2x.png";
 import organisation from "./images/organisation@2x.png";
 import taxation from "./images/taxation@2x.png";
 import Logo from "./images/Logo.png";
+import Check from './images/check.png';
+import Box from './images/box.png';
+import Store from './images/store.png'
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import styles from "./CustomDrawer.module.css";
@@ -54,6 +57,7 @@ import AddJob from "../../screens/mainApp/Properties/JobList/AddJob/AddJob";
 import City from "../../screens/mainApp/Master/City/City";
 import JobCreation from "../../screens/mainApp/Operations/JobCreation/JobCreation";
 import Initialisation from "../../screens/mainApp/Operations/JobCreation/Initialisation/Initialisation";
+import UploadProperty from '../../screens/mainApp/Properties/PropertyList/UploadProperty/UploadProperty'
 
 import Login from "../../screens/authentication/Login/Login";
 import ResPassword from "../../screens/authentication/ResetPassword/ResetPassword";
@@ -387,19 +391,19 @@ export default function MiniDrawer() {
 					{propertiesSubMenuListItems}
 					<ListItem button key="Inventory">
 						<ListItemIcon>
-							<img src={taxation} alt="Inventory" />
+							<img src={Store} alt="Inventory" />
 						</ListItemIcon>
 						<ListItemText primary="Inventory" />
 					</ListItem>
 					<ListItem button key="Package">
 						<ListItemIcon>
-							<img src={taxation} alt="Package" />
+							<img src={Box} alt="Package" />
 						</ListItemIcon>
 						<ListItemText primary="Package" />
 					</ListItem>
 					<ListItem button key="Attendance">
 						<ListItemIcon>
-							<img src={taxation} alt="Attendance" />
+							<img src={Check} alt="Attendance" />
 						</ListItemIcon>
 						<ListItemText primary="Attendance" />
 					</ListItem>
@@ -436,7 +440,7 @@ export default function MiniDrawer() {
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
 				{/* <AddOrganisation /> */}
-				<Stepper />
+				{/* <Stepper /> */}
 				{/* <TreeView /> */}
 				{/* <UserList /> */}
 				{/* <Organisation /> */}
@@ -453,6 +457,7 @@ export default function MiniDrawer() {
 				{/* <Package /> */}
 				{/* <Properties /> */}
 				{/* <AddProperty /> */}
+				<UploadProperty />
 				{/* <AddJob /> */}
 				{/* <Login /> */}
 				{/* <SignUp /> */}

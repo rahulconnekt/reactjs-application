@@ -12,10 +12,10 @@ export default function AddProperty() {
     return (
         <div className={styles.main}>
             <div className={styles.title}>
-                <span style={{ fontWeight: 'bolder' }}>
+                <span style={{color:'#43425d'}}>
                     Property List /
                 </span>
-                <span style={{ color: '#a9a9a9', fontWeight: '200' }}>
+                <span style={{ color: '#bbbbbb' }}>
                     Add Property
                 </span>
             </div>
@@ -36,12 +36,12 @@ export default function AddProperty() {
                 </form>
                 <div className={styles.buttonDiv}>
                     <div className={styles.buttons}>
-                        <Button variant="contained" color="primary" >
+                        <Button variant="contained" style={{backgroundColor:'#43425d',color:'white',textTransform:'none'}} >
                             Cancel
                     </Button>
                     </div>
                     <div className={styles.buttons}>
-                        <Button variant="contained" color="secondary">
+                        <Button variant="contained" style={{backgroundColor:'#f2134f',color:'white',textTransform:'none'}}>
                             Submit
                     </Button>
                     </div>

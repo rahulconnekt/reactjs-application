@@ -13,11 +13,22 @@
 .formDiv {
   margin: 2% 0;
   padding: 1%;
-  width: 90%;
+  width: 60%;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000014;
   border-radius: 5px;
+  opacity: 1;
+}
+.uploadDiv {
+  width: 80%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #f0f2f8 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 .row1 {
