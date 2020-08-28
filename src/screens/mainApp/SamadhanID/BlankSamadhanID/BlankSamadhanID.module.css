@@ -1,48 +1,56 @@
-.main{
+.main {
     background-color: #f7f7f5;
     width: 100%;
     height: 100%;
     padding: 2%;
 }
-.title{
-    margin-left: 2%;
+
+.title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: xx-large;
+    font-size: 28px;
+    color: #43425d;
 }
-.tableDiv{
+
+.tableDiv {
     background-color: white;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 0 1.5%;
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-.searchBar{
+
+.searchBar {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    font-size: 14px;
 }
-.searchText{
+
+.searchText {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.searchAndDrop{
+
+.searchAndDrop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 60%;
 }
-.dropDownDiv{
+
+.dropDownDiv {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-end;
 }
-.searchBarDiv{
+
+.searchBarDiv {
     padding: 1% 0;
     display: flex;
     width: 100%;
@@ -50,51 +58,61 @@
     justify-content: space-between;
     align-items: flex-end;
 }
-@media (min-width:1441px) and (max-width:2560px){
-    .searchAndDrop{
+
+.buttonDiv {
+    width: 10%;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .searchAndDrop {
         width: 40%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 60%;
     }
 }
-@media (min-width:1025px) and (max-width:1440px){
-    .searchAndDrop{
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .searchAndDrop {
         width: 45%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 50%;
     }
 }
-@media (min-width:769px) and (max-width:1024px){
-    .searchAndDrop{
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .searchAndDrop {
         width: 65%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 60%;
     }
 }
-@media (min-width:426px) and (max-width:768px){
-    .searchAndDrop{
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .searchAndDrop {
         width: 70%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 60%;
     }
 }
-@media (min-width:376px) and (max-width:425px){
-    .searchAndDrop{
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .searchAndDrop {
         width: 70%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 80%;
     }
 }
-@media (min-width:320px) and (max-width:375px){
-    .searchAndDrop{
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .searchAndDrop {
         width: 70%;
     }
-    .dropDownDiv{
+    .dropDownDiv {
         width: 80%;
     }
 }

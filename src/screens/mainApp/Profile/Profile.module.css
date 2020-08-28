@@ -8,37 +8,52 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-  }
-  .row1 {
+}
+
+.row1 {
     display: flex;
     padding: 2% 0;
     flex-direction: row;
-    justify-content: space-between;
-  }
-  .lastFormElement{
-    font-size: xx-large;
-    font-weight: bolder;
-  }
-  .checked{
+    justify-content: space-evenly;
+}
+
+.row2 {
+    width: calc(51vw - 80px);
+    display: flex;
+    padding: 2% 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.lastFormElement {
+    font-size: 25px;
+    font-weight: 400;
+    color: #707070;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.checked {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  @media (min-width:320px) and (max-width:375px){
-    .label{
-      font-size: xx-small;
+}
+
+@media (min-width:320px) and (max-width:375px) {
+    .label {
+        font-size: xx-small;
     }
-    .lastFormElement{
-      padding-left: 20%;
+    .lastFormElement {
+        padding-left: 20%;
     }
-  }
-  @media (min-width:376px) and (max-width:768px){
-    .label{
-      font-size: x-small;
+}
+
+@media (min-width:376px) and (max-width:768px) {
+    .label {
+        font-size: x-small;
     }
-    .lastFormElement{
-      padding-left: 10%;
+    .lastFormElement {
+        padding-left: 10%;
     }
-  }
-  
+}

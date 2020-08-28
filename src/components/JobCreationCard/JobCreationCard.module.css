@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px #0000000A;
+    border-radius: 4px;
+    margin-right: 2%;
+}
+
+.detailsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #4D4F5C;
+    margin-left: 2%;
+    font: Semibold 22px/28px Source Sans Pro;
+    margin-top: 0px;
+}
+
+.triangle_br {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    border-width: 30px 30px 0 0;
+    border-color: transparent black transparent transparent;
+    right: 0;
+    bottom: 0;
+}

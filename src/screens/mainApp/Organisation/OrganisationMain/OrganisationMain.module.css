@@ -1,0 +1,609 @@
+.main {
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    display: block;
+}
+
+.title {
+    margin-left: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 28px;
+    color: #43425d;
+    position: fixed;
+}
+
+.tabsDiv {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+
+/*Organisation */
+
+.organisationDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: -1%;
+}
+
+.organisationFormDiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 12px #00000014;
+}
+
+.formRowDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3%;
+    margin-bottom: 4%;
+}
+
+.organisationProfileDiv {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 250px;
+    margin-top: 5%;
+}
+
+.circle {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 100% 0 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid white;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.circle img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.peopleDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+/* Inventory */
+
+.tableDiv {
+    background-color: white;
+    margin-left: -1%;
+    padding: 1.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.searchText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropDownDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 40%;
+}
+
+.searchBarDiv {
+    padding: 1% 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.searchAndDrop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttonAndFilter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .searchAndDrop {
+        width: 50%;
+    }
+    .dropDownDiv {
+        width: 60%;
+    }
+    .buttonAndFilter {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .searchAndDrop {
+        width: 50%;
+    }
+    .dropDownDiv {
+        width: 50%;
+    }
+    .buttonAndFilter {
+        width: 30%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .searchAndDrop {
+        width: 50%;
+    }
+    .dropDownDiv {
+        width: 50%;
+    }
+    .buttonAndFilter {
+        width: 65%;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 80%;
+    }
+    .buttonAndFilter {
+        width: 65%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 80%;
+    }
+    .buttonAndFilter {
+        width: 85%;
+    }
+}
+
+
+/* Billing */
+
+.billingFormDiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 12px #00000014;
+    margin-left: -1%;
+}
+
+
+/*Account*/
+
+.paginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+/*Account2 */
+
+.acc2mainDiv {
+    background-color: white;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    margin-left: -1%;
+}
+
+.spanDiv {
+    text-align: center;
+    font: normal normal normal 25px/33px Segoe UI;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    margin-top: 10%;
+}
+
+
+/*Settings*/
+
+.settingsFormDiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 12px #00000014;
+}
+
+
+/* Modules */
+
+.moduleDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: -2%;
+}
+
+.table1div {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table2div {
+    width: 73%;
+}
+
+
+/* Teams */
+
+.teamDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 2%;
+}
+
+.cardDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.circleCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerDiv {
+    width: 100px;
+    margin-top: 5%;
+}
+
+.circleDiv {
+    height: auto;
+    padding-top: 30%;
+    width: 30%;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    background: #3b86ff;
+    position: absolute;
+    margin-top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.teamTableDiv {
+    width: 100%;
+    margin-top: 4%;
+}
+
+.teamButtonDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 7%;
+    width: 100%;
+}
+
+
+/* VerifyDocument */
+
+.vdtable2div {
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.vdsearchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.vdsearchText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vddropDownDiv {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.vdsearchBarDiv {
+    padding: 1% 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.vdsearchAndDrop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.vdbuttonAndFilter {
+    display: flex;
+    width: 30%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.vdpaginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.vdinnerDiv {
+    margin: 2% 0;
+    background-color: #f0f2f8;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.vdmodalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .vdsearchAndDrop {
+        width: 55%;
+    }
+    .vddropDownDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .vdsearchAndDrop {
+        width: 50%;
+    }
+    .vddropDownDiv {
+        width: 50%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .vdsearchAndDrop {
+        width: 70%;
+    }
+    .vddropDownDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .vdsearchAndDrop {
+        width: 70%;
+    }
+    .vddropDownDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .vdsearchAndDrop {
+        width: 70%;
+    }
+    .vddropDownDiv {
+        width: 80%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .vdsearchAndDrop {
+        width: 70%;
+    }
+    .vddropDownDiv {
+        width: 80%;
+    }
+}
+
+
+/* People */
+
+.peopleDropdown {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.peoplesearchAndDrop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.peoplemodalDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 65%;
+}
+
+
+/* Security */
+
+.secMainDiv {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: -1%;
+    padding: 0.5%;
+}
+
+.secHeader {
+    width: 100%;
+    height: 10%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+
+.secTitle {
+    margin-left: 3%;
+    color: #707070;
+    font-size: 22px;
+    font: Source Sans Pro;
+}
+
+.secHeader2 {
+    background-color: #f5f6fa;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.secTitle2 {
+    color: #43425d;
+    font-size: 22px;
+    font: Semibold 22px/25px Source Sans Pro;
+    font-weight: 500;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+.cellDiv {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 6%;
+    border-bottom: 0.5px solid #bbbbbb;
+}
+
+.innerCellDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0%;
+    margin-left: 5%;
+}
+
+.secFinalDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
+
+/* Member Permission */
+
+.mpMainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mpFirstDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 96%;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+.mpGridDiv {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1vw;
+    width: 100%;
+}

@@ -1,18 +1,24 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-.detailsDiv{
+
+.detailsDiv {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    border-bottom: 0.5px solid #F1F1F3;
+    margin-bottom: 2%;
 }
-.switchDiv{
+
+.switchDiv {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: -2%;
 }

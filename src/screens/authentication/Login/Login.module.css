@@ -1,360 +1,404 @@
 .left {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.left_main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.button{
-  width: 320px;
-  height: 50px;
-}
-.forgotPassword {
-  color: red;
-}
-.logo {
-  display: flex;
-  padding: 5%;
-  align-items: center;
-}
-.login_text {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  padding: 5%;
-  font-size: xx-large;
-}
-.login_desc {
-  text-align: center;
-  padding-bottom: 5%;
-}
-.parent {
-  width: 100vw;
-  height: 100vh;
-}
-.image1 {
-  position: relative;
-  padding-left: 5%;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 102.5%;
-  margin: 0;
-  object-fit: fill;
-  overflow: hidden;
-}
-.image2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: fill;
-  overflow-x: hidden;
-}
-.links {
-  position: absolute;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-.innerLinks {
-  height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-@media only screen and (min-width: 2560px) {
-  .image1 {
-    width: 102.5%;
-    height: 101%;
-  }
-  .image2 {
-    width: 101%;
-    height: 101%;
-  }
-  .links {
-    position: absolute;
     height: 100vh;
-    width: 12%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+
+.left_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    width: 320px;
+    height: 50px;
+}
+
+.forgotPassword {
+    color: #F2134F;
+}
+
+.logo {
+    display: flex;
+    padding: 5%;
+    align-items: center;
+}
+
+.login_text {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 5%;
+    padding-top: 10%;
+    font-size: xx-large;
+    color: #000000;
+    font: Light 31px/41px SF Pro Text;
+}
+
+.login_desc {
+    text-align: center;
+    padding-bottom: 5%;
+    font-size: medium;
+    color: #64686D;
+}
+
+.parent {
+    width: 100vw;
+    height: 100vh;
+}
+
+.image1 {
+    position: relative;
+    padding-left: 5%;
     top: 0;
     left: 0;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  .innerLinks {
+    height: 100%;
+    width: 102.5%;
+    margin: 0;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    overflow-x: hidden;
+}
+
+.links {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-between; */
+    top: 0;
+    left: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.innerLinks {
     height: 25%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 }
+
+.noAcc {
+    margin-top: 10%;
+    margin-right: 25%;
+    left: 0;
+}
+
+.signUpText {
+    white-space: nowrap;
+}
+
+@media only screen and (min-width: 2560px) {
+    .image1 {
+        width: 102.5%;
+        height: 101%;
+    }
+    .image2 {
+        width: 101%;
+        height: 101%;
+    }
+    .links {
+        position: absolute;
+        height: 100vh;
+        width: 12%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        top: 0;
+        left: 0;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    .innerLinks {
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
 @media only screen and (max-width: 320px) {
-  .left_main {
-    padding-left: 80%;
-  }
-  .button{
-    width: 240px;
-    height: 50px;
-  }
-  .parent {
-    visibility: hidden;
-  }
-  .login_text {
-    width: 320px;
-    font-size: medium;
-  }
-  .signUpText {
-    font-size: small;
-  }
-  .forgotPassword {
-    font-size: small;
-    font-weight: 500;
-  }
-  .login_desc {
-    font-size: small;
-  }
-  .usernamePassowrdLabel {
-    font-size: smaller;
-  }
-  .checkBoxLabel {
-    font-size: smaller;
-    font-weight: 500;
-  }
-  .checkBox {
-    display: flex;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .left_main {
+        padding-left: 80%;
+    }
+    .button {
+        width: 240px;
+        height: 50px;
+    }
+    .parent {
+        visibility: hidden;
+    }
+    .login_text {
+        width: 320px;
+        font-size: medium;
+    }
+    .signUpText {
+        font-size: small;
+    }
+    .forgotPassword {
+        font-size: small;
+        font-weight: 500;
+    }
+    .login_desc {
+        font-size: small;
+    }
+    .usernamePassowrdLabel {
+        font-size: smaller;
+    }
+    .checkBoxLabel {
+        font-size: smaller;
+        font-weight: 500;
+    }
+    .checkBox {
+        display: flex;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .noAcc {
+        margin-right: 10%;
+    }
 }
+
 @media only screen and (min-width:376px) and (max-width:425px) {
-  .button{
-    width: 320px;
-    height: 50px;
-  }
+    .button {
+        width: 320px;
+        height: 50px;
+    }
 }
-@media only screen and (min-width:321px) and (max-width:375px){
-  .button{
-    width: 288px;
-    height:50px;
-  }
+
+@media only screen and (min-width:321px) and (max-width:375px) {
+    .button {
+        width: 288px;
+        height: 50px;
+    }
 }
+
 @media only screen and (min-width: 321px) and (max-width: 767px) {
-  .left_main {
-    padding-left: 75%;
-  }
-  .parent {
-    visibility: hidden;
-  }
-  .forgotPassword {
-    font-size: small;
-    font-weight: 500;
-  }
-  .checkBoxLabel {
-    font-size: smaller;
-    font-weight: 500;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .login_text {
-    width: 320px;
-    font-size: large;
-  }
-  .signUpText {
-    font-size: small;
-  }
-  .forgotPassword {
-    font-size: medium;
-  }
-  .login_desc {
-    font-size: small;
-  }
-  .usernamePassowrdLabel {
-    font-size: smaller;
-  }
-  .checkBoxLabel {
-    font-size: small;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .checkBox {
-    display: flex;
-  }
+    .left_main {
+        padding-left: 75%;
+    }
+    .parent {
+        visibility: hidden;
+    }
+    .forgotPassword {
+        font-size: small;
+        font-weight: 500;
+    }
+    .checkBoxLabel {
+        font-size: smaller;
+        font-weight: 500;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .login_text {
+        width: 320px;
+        font-size: large;
+    }
+    .signUpText {
+        font-size: small;
+    }
+    .forgotPassword {
+        font-size: medium;
+    }
+    .login_desc {
+        font-size: small;
+    }
+    .usernamePassowrdLabel {
+        font-size: smaller;
+    }
+    .checkBoxLabel {
+        font-size: small;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .checkBox {
+        display: flex;
+    }
+    .noAcc {
+        margin-right: 30%;
+    }
 }
-@media only screen and (min-width:768px){
-  .image1{
-    width: 105.5%;
-    height: 100vh;
-  }
-  .image2{
-    height: 100vh;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+
+@media only screen and (min-width:768px) {
+    .image1 {
+        width: 105.5%;
+        height: 100vh;
+    }
+    .image2 {
+        height: 100vh;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-@media only screen and (min-width:1024px){
-  .image1{
-    width: 104%;
-    height: 100vh;
-  }
-  .image2{
-    height: 100vh;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+
+@media only screen and (min-width:1024px) {
+    .image1 {
+        width: 104%;
+        height: 100vh;
+    }
+    .image2 {
+        height: 100vh;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-@media only screen and (min-width:1440px){
-  .image1{
-    width: 103%;
-    height: 100vh;
-  }
-  .image2{
-    height: 100vh;
-  }
-  .forgotPwdDiv {
-    display: flex;
-    width: 100%;
-    padding: 0 5%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+
+@media only screen and (min-width:1440px) {
+    .image1 {
+        width: 103%;
+        height: 100vh;
+    }
+    .image2 {
+        height: 100vh;
+    }
+    .forgotPwdDiv {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
+
 @media (min-width: 768px) and (max-width: 1023px) {
-  .linksDiv1 {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .instaImage {
-    width: 60px;
-    height: 60px;
-  }
-  .links{
-    padding-left: 0.6em;
-  }
-  .innerLinks{
-    padding-left: 0em;
-    justify-content: space-evenly;
-  }
+    .linksDiv1 {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .instaImage {
+        width: 60px;
+        height: 60px;
+    }
+    .links {
+        padding-left: 0.6em;
+    }
+    .innerLinks {
+        padding-left: 0em;
+        justify-content: space-evenly;
+    }
 }
+
 @media (min-width: 1024px) and (max-width: 1439px) {
-  .linksDiv1 {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .instaImage {
-    width: 66px;
-    height: 66px;
-  }
-  .links{
-    padding-left: 0.3em;
-  }
-  .innerLinks{
-    padding-left: 0.5em;
-    justify-content: space-evenly;
-  }
+    .linksDiv1 {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .instaImage {
+        width: 66px;
+        height: 66px;
+    }
+    .links {
+        padding-left: 0.3em;
+    }
+    .innerLinks {
+        padding-left: 0.5em;
+        justify-content: space-evenly;
+    }
 }
+
 @media only screen and (min-width: 1440px) and (max-width: 2559px) {
-  .linksDiv1 {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-    padding-top: 5%;
-  }
-  .instaImage {
-    width: 72px;
-    height: 72px;
-  }
-  .links{
-    padding-left: 0.6em;
-  }
-  .innerLinks{
-    padding-left: 0.5em;
-    justify-content: space-evenly;
-  }
+    .linksDiv1 {
+        width: 58px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 58px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+        padding-top: 5%;
+    }
+    .instaImage {
+        width: 72px;
+        height: 72px;
+    }
+    .links {
+        padding-left: 0.6em;
+    }
+    .innerLinks {
+        padding-left: 0.5em;
+        justify-content: space-evenly;
+    }
 }

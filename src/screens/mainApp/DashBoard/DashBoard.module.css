@@ -1,18 +1,24 @@
-.title{
-    margin-left: 2%;
+.title {
+    margin-top: 3%;
+    margin-left: 5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: xx-large;
-    font-weight: 500;
+    font: Regular Source Sans Pro;
+    color: #43425D;
 }
 
-.grid{
+.grid {
     display: flex;
     justify-content: flex-start;
     align-content: space-between;
-    align-items: center;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     flex: 1;
+    margin-left: 3%;
+}
+
+@media only screen and (min-width:1000px) {
+    margin-right: 3%;
 }

@@ -1,295 +1,348 @@
 .left {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .left_main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
+
 .signUp_text {
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 5%;
 }
+
 .signUp_desc {
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: #64686D;
+    font-weight: lighter;
+    padding-bottom: 3%;
 }
+
 .row1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
 .row2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
+
 .termsCondition {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
+
 .buttonDiv {
-  display: flex;
-  padding: 2% 0;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    padding: 2% 0;
+    justify-content: center;
+    align-items: center;
 }
+
 .signInDiv {
-  padding: 3% 0;
+    padding: 3% 0;
 }
+
 .button {
-  width: 420px;
-  height: 50px;
+    width: 420px;
+    height: 50px;
 }
+
 .logo {
-  display: flex;
-  padding: 5%;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
 }
+
 .parent {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
+
 .image1 {
-  position: relative;
-  padding-left: 5%;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 102.5%;
-  margin: 0;
-  object-fit: fill;
-  overflow: hidden;
-}
-.image2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: fill;
-  overflow-x: hidden;
-}
-.links {
-  position: absolute;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-.innerLinks {
-  height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-@media (min-width: 426px) and (max-width: 767px) {
-  .parent {
-    visibility: hidden;
-  }
-  .left_main {
-    padding-left: 80%;
-  }
-  .signUp_text {
-    font-size: larger;
-  }
-  .signUp_desc {
-    font-size: medium;
-  }
-  .termsCondition {
-    justify-content: flex-start;
-  }
-  .buttonDiv {
-    width: 280px;
-  }
-  .signInDiv {
-    padding-right: 25%;
-  }
-}
-@media (min-width: 320px) and (max-width: 375px) {
-  .parent {
-    visibility: hidden;
-  }
-  .left_main {
-    padding-left: 80%;
-  }
-  .signUp_text {
-    font-size: medium;
-  }
-  .signUp_desc {
-    font-size: small;
-  }
-  .buttonDiv {
-    width: 283.45px;
-    height: 50px;
-  }
-}
-@media (min-width: 376px) and (max-width: 425px) {
-  .parent {
-    visibility: hidden;
-  }
-  .left_main {
-    padding-left: 80%;
-  }
-  .signUp_text {
-    font-size: medium;
-  }
-  .signUp_desc {
-    font-size: small;
-  }
-  .buttonDiv {
-    width: 283.45px;
-    height: 50px;
-  }
-  .signInDiv {
-    padding-right: 25%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .image1 {
-    width: 105%;
-  }
-  .buttonDiv {
-    width: 283.45px;
-    height: 50px;
-  }
-  .termsCondition {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .linksDiv1 {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .instaImage {
-    width: 60px;
-    height: 60px;
-  }
-  .links{
-    padding-left: 0.6em;
-  }
-  .innerLinks{
-    padding-left: 0em;
-    justify-content: space-evenly;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .image1 {
-    width: 104%;
-  }
-  .buttonDiv {
-    width: 283.45px;
-    height: 50px;
-  }
-  .termsCondition {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .linksDiv1 {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .instaImage {
-    width: 66px;
-    height: 66px;
-  }
-  .links{
-    padding-left: 0.3em;
-  }
-  .innerLinks{
-    padding-left: 0.5em;
-    justify-content: space-evenly;
-  }
-}
-@media only screen and (min-width: 1440px) and (max-width: 2559px) {
-  .image1 {
+    position: relative;
+    padding-left: 5%;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 102.5%;
-  }
-  .buttonDiv {
-    width: 283.45px;
-    height: 50px;
-  }
-  .termsCondition {
+    margin: 0;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    overflow-x: hidden;
+}
+
+.links {
+    position: absolute;
+    height: 100vh;
     display: flex;
-    justify-content: flex-start;
-  }
-  .linksDiv1 {
-    width: 58px;
-    height: 58px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .linksDiv2 {
-    width: 58px;
-    height: 58px;
+    top: 0;
+    left: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.innerLinks {
+    height: 25%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: white;
-    padding-top: 5%;
-  }
-  .instaImage {
-    width: 72px;
-    height: 72px;
-  }
-  .links{
-    padding-left: 0.6em;
-  }
-  .innerLinks{
-    padding-left: 0.5em;
-    justify-content: space-evenly;
-  }
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+    .parent {
+        visibility: hidden;
+    }
+    .left_main {
+        padding-left: 80%;
+    }
+    .signUp_text {
+        font-size: larger;
+    }
+    .signUp_desc {
+        font-size: medium;
+    }
+    .termsCondition {
+        justify-content: flex-start;
+    }
+    .buttonDiv {
+        width: 280px;
+    }
+    .signInDiv {
+        padding-right: 25%;
+    }
+}
+
+@media only screen and (max-width:319px) {
+    .parent {
+        visibility: hidden;
+    }
+    .left_main {
+        padding-left: 85%;
+    }
+    .signUp_text {
+        font-size: small;
+    }
+    .signUp_desc {
+        font-size: small;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .parent {
+        visibility: hidden;
+    }
+    .left_main {
+        padding-left: 85%;
+    }
+    .signUp_text {
+        font-size: medium;
+    }
+    .signUp_desc {
+        font-size: small;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .parent {
+        visibility: hidden;
+    }
+    .left_main {
+        padding-left: 80%;
+    }
+    .signUp_text {
+        font-size: medium;
+    }
+    .signUp_desc {
+        font-size: small;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+    .signInDiv {
+        padding-right: 25%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .image1 {
+        width: 105%;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+    .termsCondition {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .linksDiv1 {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .instaImage {
+        width: 60px;
+        height: 60px;
+    }
+    .links {
+        padding-left: 0.6em;
+    }
+    .innerLinks {
+        padding-left: 0em;
+        justify-content: space-evenly;
+    }
+    .signInDiv {
+        margin-right: 35%;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1439px) {
+    .image1 {
+        width: 104%;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+    .termsCondition {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .linksDiv1 {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .instaImage {
+        width: 66px;
+        height: 66px;
+    }
+    .links {
+        padding-left: 0.3em;
+    }
+    .innerLinks {
+        padding-left: 0.5em;
+        justify-content: space-evenly;
+    }
+    .signInDiv {
+        margin-right: 45%;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2559px) {
+    .image1 {
+        width: 102.5%;
+    }
+    .buttonDiv {
+        width: 283.45px;
+        height: 50px;
+    }
+    .termsCondition {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .linksDiv1 {
+        width: 58px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .linksDiv2 {
+        width: 58px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: white;
+        padding-top: 5%;
+    }
+    .instaImage {
+        width: 72px;
+        height: 72px;
+    }
+    .links {
+        padding-left: 0.6em;
+    }
+    .innerLinks {
+        padding-left: 0.5em;
+        justify-content: space-evenly;
+    }
+    .signInDiv {
+        margin-right: 45%;
+    }
 }

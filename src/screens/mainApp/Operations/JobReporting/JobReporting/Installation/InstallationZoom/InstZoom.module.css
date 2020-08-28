@@ -1,0 +1,27 @@
+.main {
+    background-color: white;
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    padding: 0 1.5%;
+}
+
+.finale {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.trackingDiv {
+    background-color: white;
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    padding: 0 1.5%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

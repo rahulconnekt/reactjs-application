@@ -1,0 +1,61 @@
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title {
+    font-size: 28px;
+    font: Source Sans Pro;
+}
+
+.formDiv {
+    margin: 2% 0;
+    padding: 1%;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.innerDiv {
+    margin: 2% 0;
+    background-color: #F0F2F8;
+    width: 61%;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0;
+    padding: 2%;
+    justify-content: space-around;
+    margin-left: 7%;
+}
+
+.row1 {
+    display: flex;
+    margin: 2% 0;
+    padding: 2%;
+}
+
+.row2 {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-left: 5%;
+    margin: 2% 0;
+}
+
+.buttonDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 15%;
+}
+
+.buttons {
+    margin: 2%;
+}
