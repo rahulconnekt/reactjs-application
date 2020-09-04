@@ -43,6 +43,10 @@ const useStyles = makeStyles((theme) => ({
 		width: theme.spacing(2),
 		height: theme.spacing(2),
 	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
+	},
 }));
 
 const data = [
@@ -236,9 +240,42 @@ export default function Initialisation() {
 				</div>
 				<div className={styles.date}>
 					<span className={styles.label}>From Date</span>
-					<DatePicker width="80%" />
+					<TextField
+						id="standard-search"
+						size="small"
+						type="date"
+						variant="outlined"
+						style={{
+							borderColor: "#F5F6FA",
+							borderRadius: "4px",
+							width: "31%",
+							marginLeft: "2%",
+							marginRight: "2%",
+						}}
+						InputProps={{
+							classes: { input: classes.input },
+							color: "#4D4F5C",
+							focused: classes.focused,
+						}}
+					/>
 					<span className={styles.label}>To Date</span>
-					<DatePicker width="80%" />
+					<TextField
+						id="standard-search"
+						size="small"
+						type="date"
+						variant="outlined"
+						style={{
+							borderColor: "#F5F6FA",
+							borderRadius: "4px",
+							width: "31%",
+							marginLeft: "2%",
+						}}
+						InputProps={{
+							classes: { input: classes.input },
+							color: "#4D4F5C",
+							focused: classes.focused,
+						}}
+					/>
 				</div>
 			</div>
 			<div className={styles.grid}>

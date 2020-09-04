@@ -86,7 +86,7 @@ import QC1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/QC/Q
 import QCTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/QC/QCTable/QCTable";
 import InitialisationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/Initialisation/InitialisationTable/InitialisationTable";
 import AuditJob1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/AuditJob/AuditJob";
-import InstallationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/AuditJob/AuditTable/AuditTable";
+import InstallationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/Installation/InstallationTable/InstallationTable";
 import Installation1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/Installation/Installation";
 import OrganisationMain from "../../screens/mainApp/Organisation/OrganisationMain/OrganisationMain";
 import AddSub from "../../screens/mainApp/Properties/SubCategory/AddSubCategory/AddSub";
@@ -885,7 +885,7 @@ export default function MiniDrawer(props) {
 				{/* <CustomizedInputs /> */}
 				{/* <BlankSamadhanID /> */}
 				{/* <JobCreation /> */}
-				<Initialisation />
+				{/* <Initialisation /> */}
 				{/* <CreateJob /> */}
 				{/* <Installation /> */}
 				{/* <QC /> */}
@@ -897,7 +897,7 @@ export default function MiniDrawer(props) {
 				{/* <JobList /> */}
 				{/* <VerifyDocument /> */}
 				{/* <RequestAccess /> */}
-				{/* <Initialisation1 /> */}
+				<Initialisation1 />
 				{/* <QC1 /> */}
 				{/* <AuditJob1 /> */}
 				{/* <DropDown /> */}

@@ -30,6 +30,8 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-evenly;
+    margin-bottom: 2%;
+    margin-top: 4%;
 }
 
 .searchText {
@@ -47,12 +49,11 @@
 }
 
 .searchBarDiv {
-    padding: 1% 0;
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .searchAndDrop {
@@ -66,7 +67,8 @@
     display: flex;
     width: 60%;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .paginationDiv {
@@ -77,7 +79,7 @@
 
 @media (min-width: 1441px) and (max-width: 2560px) {
     .searchAndDrop {
-        width: 40%;
+        width: 50%;
     }
     .dropDownDiv {
         width: 60%;

@@ -5,22 +5,16 @@ import styles from "./UWHT.module.css";
 import Dropdown from "../../../../../../../components/Select/Select";
 
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
-import DatePicker from "../../../../../../../components/DatePicker/DatePicker";
 import Pagination from "@material-ui/lab/Pagination";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import download from "../../../../../../../../src/Assets/upload1.png";
-import edit from "./edit.png";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -46,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
 			overflowX: "auto",
 			maxHeight: 10,
 			overflow: "scroll",
+		},
+		input: {
+			color: "#4D4F5C",
+			fontSize: "smaller",
 		},
 		display: "flex",
 		flexDirection: "column",
@@ -107,8 +105,8 @@ export default function Language() {
 									style={{
 										borderColor: "#F5F6FA",
 										borderRadius: "4px",
-										marginBottom: "5%",
-										width: "60%",
+										width: "12vw",
+										marginRight: "2%",
 									}}
 									InputProps={{
 										startAdornment: icon,
@@ -120,7 +118,7 @@ export default function Language() {
 								/>
 								<Dropdown
 									holder="Filter"
-									style={{ paddingLeft: "2%" }}
+									style={{ marginLeft: "2%" }}
 								/>
 							</div>
 						</div>
@@ -135,7 +133,6 @@ export default function Language() {
 									textTransform: "none",
 									width: "45%",
 									fontWeight: "lighter",
-									marginBottom: "3%",
 									marginLeft: "5%",
 									marginRight: "5%",
 								}}
@@ -146,62 +143,77 @@ export default function Language() {
 						</div>
 					</div>
 					<div className={styles.buttonAndFilter}>
-						<span
+						<div
 							style={{
-								textAlign: "center",
-								alignSelf: "center",
-								fontSize: "large",
-								color: "#43425D",
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "center",
+								justifyContent: "space-evenly",
 							}}
 						>
-							From Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
-						<span
-							style={{
-								textAlign: "center",
-								fontSize: "large",
-								alignSelf: "center",
-								color: "#43425D",
-							}}
-						>
-							To Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
+							<span
+								style={{
+									textAlign: "center",
+									alignSelf: "center",
+									fontSize: "large",
+									color: "#43425D",
+								}}
+							>
+								From Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "24%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+									fontSize: "smaller",
+								}}
+							/>
+							<span
+								style={{
+									textAlign: "center",
+									fontSize: "large",
+									alignSelf: "center",
+									color: "#43425D",
+								}}
+							>
+								To Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "32%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+									fontSize: "smaller",
+								}}
+							/>
+						</div>
 						<Button
 							variant="contained"
 							onClick={toggleModal}
 							style={{
 								textTransform: "none",
 								textAlign: "center",
-								// height: "95%",
-								marginBottom: "1%",
 								backgroundColor: "#3B86FF",
 								color: "white",
 							}}

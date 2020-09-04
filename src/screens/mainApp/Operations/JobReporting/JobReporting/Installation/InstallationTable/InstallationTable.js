@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-import styles from "./AuditTable.module.css";
+import styles from "./InstallationTable.module.css";
 
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
@@ -23,6 +17,14 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import Dropdown from "../../../../../../../components/Select/Select";
+import { useBorderSelectStyles } from "@mui-treasury/styles/select/border";
+import { makeStyles } from "@material-ui/core/styles";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { blue, grey } from "@material-ui/core/colors";
+import download from "../../../../../../../../src/Assets/upload1.png";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -42,18 +44,129 @@ const useStyles = makeStyles((theme) => ({
 			maxHeight: "60%",
 		},
 		table: {
-			minWidth: 650,
+			minWidth: 850,
 			borderRadius: 0,
 			overflowY: "auto",
 			overflowX: "auto",
 			maxHeight: 10,
 			overflow: "scroll",
 		},
+		input: {
+			color: "#4D4F5C",
+			fontSize: "smaller",
+		},
+		select: {
+			minWidth: "8vw",
+			["@media (min-width: 320px) and (max-width: 375px)"]: {
+				minWidth: "25vw",
+			},
+			["@media (min-width: 376px) and (max-width: 425px)"]: {
+				minWidth: "25vw",
+			},
+			["@media (min-width: 426px) and (max-width: 768px)"]: {
+				minWidth: "45vw",
+			},
+			["@media (min-width: 769px) and (max-width: 1024px)"]: {
+				minWidth: "45vw",
+			},
+			background: "white",
+			color: grey[700],
+			borderColor: "#D7DAE2",
+			borderStyle: "solid",
+			borderWidth: "2px",
+			borderRadius: "4px",
+			paddingLeft: "5px",
+			paddingTop: "2px",
+			paddingBottom: "2px",
+			fontSize: "13px",
+			"&:hover": {
+				borderColor: grey[400],
+			},
+			"&:focus": {
+				borderRadius: "4px",
+				background: "white",
+				borderColor: blue[200],
+			},
+		},
+		icon: {
+			color: grey[500],
+			right: 12,
+			position: "absolute",
+			userSelect: "none",
+			pointerEvents: "none",
+		},
+		list: {
+			paddingTop: 0,
+			paddingBottom: 0,
+			background: "white",
+			color: "#4d4f5c",
+			fontSize: "smaller",
+			"& li.Mui-selected": {
+				fontWeight: 400,
+			},
+		},
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "flex-start",
 	},
 }));
+
+const DropDown = (props1) => {
+	const [val, setVal] = useState(0);
+
+	const handleChange = (event) => {
+		setVal(event.target.value);
+	};
+
+	const borderSelectClasses = useBorderSelectStyles();
+	const menuProps = {
+		classes: {
+			list: borderSelectClasses.list,
+		},
+		anchorOrigin: {
+			vertical: "bottom",
+			horizontal: "left",
+		},
+		transformOrigin: {
+			vertical: "top",
+			horizontal: "left",
+		},
+		getContentAnchorEl: null,
+	};
+
+	const classes = useStyles();
+
+	const iconComponent = (props) => {
+		return (
+			<ExpandMoreIcon
+				className={props.className + " " + borderSelectClasses.icon}
+			/>
+		);
+	};
+
+	return (
+		<FormControl>
+			<Select
+				disableUnderline
+				labelId="inputLabel"
+				placeholder={props1.holder}
+				IconComponent={iconComponent}
+				className={classes.select}
+				MenuProps={menuProps}
+				value={val}
+				onChange={handleChange}
+				style={{
+					marginRight: "2%",
+				}}
+			>
+				<MenuItem value={0}> {props1.holder} </MenuItem>{" "}
+				<MenuItem value={1}> One </MenuItem>{" "}
+				<MenuItem value={2}> Two </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>{" "}
+			</Select>
+		</FormControl>
+	);
+};
 function createData(name, calories, fat, carbs, protein) {
 	return { name, calories, fat, carbs, protein };
 }
@@ -102,7 +215,7 @@ export default function Language() {
 				<div className={styles.searchBarDiv}>
 					<div className={styles.searchAndDrop}>
 						<div>
-							<div className={styles.searchBarDiv}>
+							<div className={styles.searchBar}>
 								<TextField
 									id="standard-search"
 									size="small"
@@ -111,8 +224,7 @@ export default function Language() {
 									style={{
 										borderColor: "#F5F6FA",
 										borderRadius: "4px",
-										marginBottom: "5%",
-										width: "60%",
+										marginRight: "2%",
 									}}
 									InputProps={{
 										startAdornment: icon,
@@ -122,39 +234,10 @@ export default function Language() {
 										focused: classes.focused,
 									}}
 								/>
-								{/* <FormControl
-									variant="outlined"
-									style={{ marginLeft: "1%", height: "30%" }}
-								>
-									<InputLabel
-										htmlFor="outlined-age-native-simple"
-										style={{
-											alignText: "center",
-										}}
-									>
-										Filter
-									</InputLabel>
-									<Select
-										native
-										value={state.age}
-										onChange={handleChange}
-										style={{
-											maxHeight: "40%",
-											marginBottom: "5%",
-										}}
-										label="Filter"
-										inputProps={{
-											name: "Filter",
-											id: "outlined-age-native-simple",
-										}}
-									>
-										<option aria-label="None" value="" />
-										<option value={10}>Ten</option>
-										<option value={20}>Twenty</option>
-										<option value={30}>Thirty</option>
-									</Select>
-								</FormControl> */}
-								<Dropdown holder="Filter" />
+								<Dropdown
+									holder="Filter"
+									style={{ marginLeft: "2%" }}
+								/>
 							</div>
 						</div>
 						<div className={styles.dropDownDiv}>
@@ -166,108 +249,96 @@ export default function Language() {
 									borderRadius: "20px",
 
 									textTransform: "none",
-									width: "45%",
+									width: "110px",
 									fontWeight: "lighter",
-									height: "70%",
-									marginBottom: "3%",
 									marginLeft: "5%",
 									marginRight: "5%",
 								}}
 							>
 								Search
 							</Button>
-							{/* <FormControl variant="outlined">
-								<InputLabel
-									htmlFor="outlined-age-native-simple"
-									style={{ alignText: "center" }}
-								>
-									Week
-								</InputLabel>
-								<Select
-									native
-									value={state.age}
-									onChange={handleChange}
-									style={{
-										maxHeight: "80%",
-										marginBottom: "5%",
-									}}
-									label="Filter"
-									inputProps={{
-										name: "Filter",
-										id: "outlined-age-native-simple",
-									}}
-								>
-									<option aria-label="None" value="" />
-									<option value={10}>Ten</option>
-									<option value={20}>Twenty</option>
-									<option value={30}>Thirty</option>
-								</Select>
-							</FormControl> */}
 							<Dropdown holder="Week" />
 						</div>
 					</div>
 					<div className={styles.buttonAndFilter}>
-						<span
+						<div
 							style={{
-								textAlign: "center",
-								alignSelf: "center",
-								fontSize: "large",
-								color: "#43425D",
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "center",
+								justifyContent: "space-evenly",
 							}}
 						>
-							From Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
-						<span
-							style={{
-								textAlign: "center",
-								fontSize: "large",
-								alignSelf: "center",
-								color: "#43425D",
-							}}
-						>
-							To Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
+							<span
+								style={{
+									textAlign: "center",
+									alignSelf: "center",
+									fontSize: "large",
+									color: "#43425D",
+								}}
+							>
+								From Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "33%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
+							<span
+								style={{
+									textAlign: "center",
+									fontSize: "large",
+									alignSelf: "center",
+									color: "#43425D",
+								}}
+							>
+								To Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "33%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
+						</div>
 						<Button
 							variant="contained"
 							onClick={toggleModal}
 							style={{
 								textTransform: "none",
 								textAlign: "center",
-								// height: "95%",
-								marginBottom: "1%",
 								backgroundColor: "#3B86FF",
 								color: "white",
 							}}
 						>
 							Download
+							<img
+								src={download}
+								style={{ transform: "rotate(180deg)" }}
+							/>
 						</Button>
 					</div>
 				</div>
@@ -368,131 +439,180 @@ export default function Language() {
 									>
 										AVERAGE TIME SPENT PER PROPERTY
 									</TableCell>
+									<TableCell
+										align="left"
+										style={{
+											textAlign: "center",
+											color: "#A3A6B4",
+										}}
+									>
+										AVERAGE TIME BETWEEN ANY TWO PROPERTY
+									</TableCell>
+									<TableCell
+										align="left"
+										style={{
+											textAlign: "center",
+											color: "#A3A6B4",
+										}}
+									>
+										FIRST PROPERTY INSTALLATION TIME
+									</TableCell>
+									<TableCell
+										align="left"
+										style={{
+											textAlign: "center",
+											color: "#A3A6B4",
+										}}
+									>
+										TRACKING ACROSS TIME OF DAY
+									</TableCell>
 								</TableRow>
 							</TableHead>
+							<TableBody>
+								{rows.map((row) => (
+									<TableRow key={row.name}>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											1
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											Demo#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										></TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										></TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										></TableCell>
+									</TableRow>
+								))}
+							</TableBody>
 						</Table>
-						<div style={{ overflow: "auto", height: "20vw" }}>
-							<Table
-								aria-label="simple table"
-								className={classes.table}
-								style={{ tableLayout: "fixed" }}
-							>
-								<TableBody>
-									{rows.map((row) => (
-										<TableRow key={row.name}>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												1
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												Demo#
-											</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</div>
 					</div>
 				</div>
 
