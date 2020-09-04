@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import Pagination from "@material-ui/lab/Pagination";
+import download from "../../../../../Assets/upload1.png";
 import InitialisationTable from "../../../../../components/JobCreationTables/InitialisationTable/InitialisationTable";
 
 const useStyles = makeStyles((theme) => ({
@@ -80,7 +81,7 @@ export default function Language() {
 									color: "white",
 									borderRadius: "20px",
 									textTransform: "none",
-									width: "35%",
+									width: "109px",
 									outline: "none",
 								}}
 							>
@@ -96,11 +97,33 @@ export default function Language() {
 							style={{
 								textTransform: "none",
 								textAlign: "center",
+								width: "45%",
+								alignSelf: "right",
+								outline: "none",
+								backgroundColor: "#3B86FF",
+								fontSize: "10px",
+							}}
+						>
+							Download
+							<img
+								src={download}
+								style={{
+									transform: "rotate(180deg)",
+									marginLeft: "30%",
+								}}
+							/>
+						</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							onClick={() => {}}
+							style={{
+								textTransform: "none",
+								textAlign: "center",
 								// width: "60%",
 								alignSelf: "right",
-								marginLeft: "48%",
+								marginLeft: "2%",
 								outline: "none",
-								whiteSpace: "nowrap",
 							}}
 						>
 							Create new job

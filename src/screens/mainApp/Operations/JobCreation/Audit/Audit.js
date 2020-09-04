@@ -329,6 +329,7 @@ export default function Audit() {
 										textAlign: "justify",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									S.NO.
@@ -339,6 +340,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									GOVERNMENT PROPERTY NUMBER
@@ -349,6 +351,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									NAME OF THE PROPERTY
@@ -359,6 +362,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									PROPERTY OWNER
@@ -369,6 +373,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									SAMADHAN ID
@@ -379,6 +384,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									LONGITUDE
@@ -389,6 +395,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									LATITUDE
@@ -399,6 +406,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									MOBILE NO.
@@ -409,6 +417,7 @@ export default function Audit() {
 										textAlign: "center",
 										color: "#A3A6B4",
 										fontSize: "small",
+										whiteSpace: "nowrap",
 									}}
 								>
 									IMAGES

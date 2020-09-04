@@ -16,7 +16,7 @@
     margin-left: 2%;
     display: flex;
     justify-content: flex-start;
-    font-size: x-large;
+    font-size: 21px;
     white-space: nowrap;
 }
 
@@ -46,6 +46,6 @@
 
 @media only screen and (max-width:1440px) {
     .header2 {
-        margin-right: 2%;
+        width: 60%;
     }
 }

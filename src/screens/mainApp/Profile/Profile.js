@@ -21,16 +21,16 @@ const useStyles = makeStyles((theme) => ({
 	select: {
 		minWidth: "20.5vw",
 		["@media (min-width: 321px) and (max-width: 374px)"]: {
-			minWidth: "89vw",
+			maxWidth: "90vw",
 		},
 		["@media (min-width: 375px) and (max-width: 400px)"]: {
-			minWidth: "85vw",
+			minWidth: "30vw",
 		},
 		["@media (max-width:320px)"]: {
-			minWidth: "98vw",
+			minWidth: "30vw",
 		},
 		["@media (min-width: 426px) and (max-width: 768px)"]: {
-			minWidth: "60vw",
+			minWidth: "30vw",
 		},
 		background: "white",
 		color: grey[700],
@@ -65,6 +65,12 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "smaller",
 		"& li.Mui-selected": {
 			fontWeight: 400,
+		},
+	},
+	innerT: {
+		width: "45%",
+		["@media only screen and (max-width:860px)"]: {
+			paddingBottom: "4%",
 		},
 	},
 }));
@@ -157,13 +163,14 @@ export default function Profile(props) {
 					id="outlined-basic"
 					label={<span className={styles.label}>First Name</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
 				/>
 				<TextField
 					id="outlined-basic"
 					label={<span className={styles.label}>Last name</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
+					style={{ paddingBottom: "0%" }}
 				/>
 			</div>
 			<div className={styles.row1}>
@@ -171,13 +178,14 @@ export default function Profile(props) {
 					id="outlined-basic"
 					label={<span className={styles.label}>Username</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
 				/>
 				<TextField
 					id="outlined-basic"
 					label={<span className={styles.label}>E-mail address</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
+					style={{ paddingBottom: "0%" }}
 				/>
 			</div>
 			<div className={styles.row1}>
@@ -185,7 +193,7 @@ export default function Profile(props) {
 					id="outlined-basic"
 					label={<span className={styles.label}>Phone number</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
 				/>
 				<TextField
 					id="outlined-basic"
@@ -195,7 +203,8 @@ export default function Profile(props) {
 						</span>
 					}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
+					style={{ paddingBottom: "0%" }}
 				/>
 			</div>
 			<div className={styles.row2} style={{}}>
@@ -210,6 +219,7 @@ export default function Profile(props) {
 					label={<span className={styles.label}>Address</span>}
 					variant="outlined"
 					size="normal"
+					className={classes.innerT}
 					style={{ width: "100%" }}
 				/>
 			</div>
@@ -223,7 +233,7 @@ export default function Profile(props) {
 					id="outlined-basic"
 					label={<span className={styles.label}>Postal Code</span>}
 					variant="outlined"
-					style={{ width: "45%" }}
+					className={classes.innerT}
 				/>
 			</div>
 		</>,

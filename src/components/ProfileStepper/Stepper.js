@@ -202,6 +202,7 @@ export default function CustomizedSteppers() {
 										outline: "none",
 										backgroundColor: "#F2134F",
 										width: "12%",
+										whiteSpace: "nowrap",
 									}}
 								>
 									{activeStep === steps.length - 1

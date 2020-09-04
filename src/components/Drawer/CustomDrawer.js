@@ -112,6 +112,9 @@ const drawerWidth = 252;
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
+		["@media only screen and (max-width:800px)"]: {
+			overflowX: "auto",
+		},
 	},
 	appBar: {
 		backgroundColor: "white",
@@ -141,6 +144,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	drawerOpen: {
 		width: drawerWidth,
+
 		transition: theme.transitions.create("width", {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen,
@@ -181,6 +185,9 @@ const useStyles = makeStyles((theme) => ({
 	content: {
 		flexGrow: 1,
 		outline: "none",
+		["@media only screen and (max-width:800px)"]: {
+			marginBottom: "20%",
+		},
 	},
 	orange: {
 		color: theme.palette.getContrastText(deepOrange[500]),
@@ -878,7 +885,7 @@ export default function MiniDrawer(props) {
 				{/* <CustomizedInputs /> */}
 				{/* <BlankSamadhanID /> */}
 				{/* <JobCreation /> */}
-				{/* <Initialisation /> */}
+				<Initialisation />
 				{/* <CreateJob /> */}
 				{/* <Installation /> */}
 				{/* <QC /> */}
@@ -910,7 +917,7 @@ export default function MiniDrawer(props) {
 				{/* <PV /> */}
 				{/* <EMD /> */}
 				{/* <SurveyRect /> */}
-				<Audit />
+				{/* <Audit /> */}
 				{/* <SR /> */}
 			</main>
 		</div>
