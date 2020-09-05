@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
 			width: "25ch",
 		},
 	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
+	},
 }));
 
 export default function OrganisationSamadhanID() {
@@ -68,6 +72,7 @@ export default function OrganisationSamadhanID() {
 									focused: classes.focused,
 								}}
 							/>
+
 							<Button
 								variant="contained"
 								style={{
@@ -76,7 +81,7 @@ export default function OrganisationSamadhanID() {
 									color: "white",
 									outline: "none",
 									textTransform: "none",
-									marginLeft: "4%",
+									marginLeft: "1%",
 									width: "20%",
 								}}
 							>
@@ -104,16 +109,14 @@ export default function OrganisationSamadhanID() {
 					<SamadhanTable />
 				</div>
 			</div>
-			<Pagination
-				count={5}
-				shape="rounded"
-				color="primary"
-				variant="outlined"
-				style={{
-					marginTop: "2%",
-					marginLeft: "78%",
-				}}
-			/>
+			<div className={styles.paginationDiv}>
+				<Pagination
+					count={5}
+					shape="rounded"
+					color="primary"
+					variant="outlined"
+				/>
+			</div>
 		</div>
 	);
 }

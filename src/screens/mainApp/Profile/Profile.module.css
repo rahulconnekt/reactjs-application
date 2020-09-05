@@ -4,7 +4,6 @@
     height: 80%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -14,6 +13,7 @@
     display: flex;
     padding: 2% 0;
     flex-direction: row;
+    margin-left: 2%;
     justify-content: space-evenly;
 }
 
@@ -40,20 +40,33 @@
     align-items: center;
 }
 
+@media only screen and (max-width:860px) {
+    .formDiv {
+        margin-left: 30%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+    .row1 {
+        flex-direction: column;
+    }
+    .row2 {
+        flex-direction: column;
+        padding-right: 50%;
+    }
+    .lastFormElement {
+        margin-right: 40%;
+    }
+}
+
 @media (min-width:320px) and (max-width:375px) {
     .label {
         font-size: xx-small;
-    }
-    .lastFormElement {
-        padding-left: 20%;
     }
 }
 
 @media (min-width:376px) and (max-width:768px) {
     .label {
         font-size: x-small;
-    }
-    .lastFormElement {
-        padding-left: 10%;
     }
 }

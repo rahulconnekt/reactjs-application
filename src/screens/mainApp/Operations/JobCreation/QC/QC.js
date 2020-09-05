@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import Pagination from "@material-ui/lab/Pagination";
+import download from "../../../../../Assets/upload1.png";
 import InitialisationTable from "../../../../../components/JobCreationTables/InitialisationTable/InitialisationTable";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,31 +39,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const GreenCheckbox = withStyles({
-	root: {
-		color: "green",
-		"&$checked": {
-			color: "green",
-		},
-	},
-	checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
 export default function Language() {
 	const classes = useStyles();
-	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [check, setCheck] = useState(false);
-	const handleChange = () => setCheck(!check);
 	let icon = <SearchIcon style={{ color: "#BCBCCB", alignSelf: "left" }} />;
 	return (
 		<div className={styles.main}>
 			<div className={styles.title}>
-				<span style={{ fontWeight: "light" }}>
-					Operations / Job Creation /
-				</span>
-				<span style={{ fontWeight: "light", color: "#BBBBBB" }}>
-					&nbsp;QC
-				</span>
+				<span>Operations / Job Creation /</span>
+				<span style={{ color: "#BBBBBB" }}>&nbsp;QC</span>
 			</div>
 			<div className={styles.tableDiv}>
 				<div className={styles.searchBarDiv}>
@@ -96,7 +81,7 @@ export default function Language() {
 									color: "white",
 									borderRadius: "20px",
 									textTransform: "none",
-									width: "35%",
+									width: "109px",
 									outline: "none",
 								}}
 							>
@@ -112,9 +97,32 @@ export default function Language() {
 							style={{
 								textTransform: "none",
 								textAlign: "center",
+								width: "45%",
+								alignSelf: "right",
+								outline: "none",
+								backgroundColor: "#3B86FF",
+								fontSize: "10px",
+							}}
+						>
+							Download
+							<img
+								src={download}
+								style={{
+									transform: "rotate(180deg)",
+									marginLeft: "30%",
+								}}
+							/>
+						</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							onClick={() => {}}
+							style={{
+								textTransform: "none",
+								textAlign: "center",
 								// width: "60%",
 								alignSelf: "right",
-								marginLeft: "48%",
+								marginLeft: "2%",
 								outline: "none",
 							}}
 						>
@@ -128,16 +136,14 @@ export default function Language() {
 
 				<div className={classes.root}></div>
 			</div>
-			<Pagination
-				count={5}
-				shape="rounded"
-				color="primary"
-				variant="outlined"
-				style={{
-					marginTop: "2%",
-					marginLeft: "78%",
-				}}
-			/>
+			<div className={styles.paginationDiv}>
+				<Pagination
+					count={5}
+					shape="rounded"
+					color="primary"
+					variant="outlined"
+				/>
+			</div>
 		</div>
 	);
 }

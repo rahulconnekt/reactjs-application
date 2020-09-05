@@ -4,11 +4,8 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import styles from "./City.module.css";
 
 import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
@@ -20,7 +17,12 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import edit from "./edit.png";
-import CustomDrawer from "../../../../components/Drawer/CustomDrawer";
+import { useBorderSelectStyles } from "@mui-treasury/styles/select/border";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { blue, grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -51,17 +53,51 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: "column",
 		justifyContent: "flex-start",
 	},
-}));
-
-const GreenCheckbox = withStyles({
-	root: {
-		color: "green",
-		"&$checked": {
-			color: "green",
+	select: {
+		minWidth: "8.5vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		background: "white",
+		color: grey[700],
+		borderColor: "#D7DAE2",
+		borderStyle: "solid",
+		borderWidth: "2px",
+		borderRadius: "4px",
+		paddingLeft: "5px",
+		paddingTop: "2px",
+		paddingBottom: "2px",
+		fontSize: "13px",
+		"&:hover": {
+			borderColor: grey[400],
+		},
+		"&:focus": {
+			borderRadius: "4px",
+			background: "white",
+			borderColor: blue[200],
 		},
 	},
-	checked: {},
-})((props) => <Checkbox color="default" {...props} />);
+	icon: {
+		color: grey[500],
+		right: 12,
+		position: "absolute",
+		userSelect: "none",
+		pointerEvents: "none",
+	},
+	list: {
+		paddingTop: 0,
+		paddingBottom: 0,
+		background: "white",
+		color: "#4d4f5c",
+		fontSize: "smaller",
+		"& li.Mui-selected": {
+			fontWeight: 400,
+		},
+	},
+}));
 
 function createData(name, calories, fat, carbs, protein) {
 	return { name, calories, fat, carbs, protein };
@@ -110,7 +146,64 @@ const rows = [
 	createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function Language() {
+const Dropdown = (props1) => {
+	const [val, setVal] = useState(0);
+
+	const handleChange = (event) => {
+		setVal(event.target.value);
+	};
+
+	const borderSelectClasses = useBorderSelectStyles();
+	const menuProps = {
+		classes: {
+			list: borderSelectClasses.list,
+		},
+		anchorOrigin: {
+			vertical: "bottom",
+			horizontal: "left",
+		},
+		transformOrigin: {
+			vertical: "top",
+			horizontal: "left",
+		},
+		getContentAnchorEl: null,
+	};
+
+	const classes = useStyles();
+
+	const iconComponent = (props) => {
+		return (
+			<ExpandMoreIcon
+				className={props.className + " " + borderSelectClasses.icon}
+			/>
+		);
+	};
+
+	return (
+		<FormControl>
+			<Select
+				disableUnderline
+				labelId="inputLabel"
+				placeholder={props1.holder}
+				IconComponent={iconComponent}
+				className={classes.select}
+				MenuProps={menuProps}
+				value={val}
+				onChange={handleChange}
+				style={{
+					marginRight: "2%",
+				}}
+			>
+				<MenuItem value={0}> {props1.holder} </MenuItem>{" "}
+				<MenuItem value={1}> One </MenuItem>{" "}
+				<MenuItem value={2}> Two </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>{" "}
+			</Select>
+		</FormControl>
+	);
+};
+
+export default function City() {
 	const classes = useStyles();
 	const [state, setState] = React.useState({
 		age: "",
@@ -150,7 +243,6 @@ export default function Language() {
 									style={{
 										borderColor: "#F5F6FA",
 										borderRadius: "4px",
-										marginBottom: "5%",
 									}}
 									InputProps={{
 										startAdornment: icon,
@@ -168,13 +260,10 @@ export default function Language() {
 								style={{
 									backgroundColor: "#43425D",
 									color: "white",
-									borderRadius: "20px",
-
+									borderRadius: "17px",
 									textTransform: "none",
 									width: "45%",
-									fontWeight: "lighter",
-									marginBottom: "3%",
-									height: "90%",
+									outline: "none",
 								}}
 							>
 								Search
@@ -182,34 +271,7 @@ export default function Language() {
 						</div>
 					</div>
 					<div className={styles.buttonAndFilter}>
-						<FormControl variant="outlined">
-							<InputLabel
-								htmlFor="outlined-age-native-simple"
-								style={{ alignText: "center" }}
-							>
-								Filter
-							</InputLabel>
-							<Select
-								native
-								value={state.age}
-								onChange={handleChange}
-								style={{
-									width: "120%",
-									maxHeight: "80%",
-									marginBottom: "5%",
-								}}
-								label="Filter"
-								inputProps={{
-									name: "Filter",
-									id: "outlined-age-native-simple",
-								}}
-							>
-								<option aria-label="None" value="" />
-								<option value={10}>Ten</option>
-								<option value={20}>Twenty</option>
-								<option value={30}>Thirty</option>
-							</Select>
-						</FormControl>
+						<Dropdown holder="Filter" />
 						<Button
 							variant="contained"
 							color="secondary"
@@ -217,12 +279,12 @@ export default function Language() {
 							style={{
 								textTransform: "none",
 								textAlign: "center",
-								width: "45%",
-								// height: "95%",
-								marginBottom: "3.2%",
+								whiteSpace: "nowrap",
+								outline: "none",
+								marginLeft: "4%",
 							}}
 						>
-							Add new city
+							Add new country
 						</Button>
 					</div>
 				</div>
@@ -428,16 +490,14 @@ export default function Language() {
 
 				<div className={classes.root}></div>
 			</div>
-			<Pagination
-				count={5}
-				shape="rounded"
-				color="primary"
-				variant="outlined"
-				style={{
-					marginTop: "2%",
-					marginLeft: "78%",
-				}}
-			/>
+			<div className={styles.paginationDiv}>
+				<Pagination
+					count={5}
+					shape="rounded"
+					color="primary"
+					variant="outlined"
+				/>
+			</div>
 		</div>
 	);
 }

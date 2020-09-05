@@ -162,6 +162,33 @@ const useStyles = makeStyles((theme) => ({
 			borderColor: blue[200],
 		},
 	},
+	selectModule: {
+		minWidth: "8.5vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		background: "white",
+		color: "#43425D",
+		borderColor: "#D7DAE2",
+		borderStyle: "solid",
+		borderWidth: "2px",
+		borderRadius: "4px",
+		paddingLeft: "5px",
+		paddingTop: "2px",
+		paddingBottom: "2px",
+		fontSize: "13px",
+		"&:hover": {
+			borderColor: grey[400],
+		},
+		"&:focus": {
+			borderRadius: "4px",
+			background: "white",
+			borderColor: blue[200],
+		},
+	},
 	icon: {
 		color: "#43425D",
 		right: 12,
@@ -250,6 +277,68 @@ const BorderSelect = (props1) => {
 	);
 };
 
+const BorderSelectModule = (props1) => {
+	const [val, setVal] = React.useState(0);
+
+	const handleChange = (event) => {
+		setVal(event.target.value);
+	};
+
+	const borderSelectClasses = useBorderSelectStyles();
+	const menuProps = {
+		classes: {
+			list: borderSelectClasses.list,
+		},
+		anchorOrigin: {
+			vertical: "bottom",
+			horizontal: "left",
+		},
+		transformOrigin: {
+			vertical: "top",
+			horizontal: "left",
+		},
+		getContentAnchorEl: null,
+	};
+
+	const classes = useStyles();
+
+	const iconComponent = (props) => {
+		return (
+			<ExpandMoreIcon
+				className={
+					props.className +
+					" " +
+					borderSelectClasses.icon +
+					" " +
+					classes.icon
+				}
+			/>
+		);
+	};
+
+	return (
+		<FormControl>
+			<Select
+				disableUnderline
+				labelId="inputLabel"
+				placeholder="Role"
+				IconComponent={iconComponent}
+				className={classes.selectModule}
+				MenuProps={menuProps}
+				value={val}
+				onChange={handleChange}
+				style={{
+					marginRight: "2%",
+				}}
+			>
+				<MenuItem value={0}> {props1.holder} </MenuItem>{" "}
+				<MenuItem value={1}> One </MenuItem>{" "}
+				<MenuItem value={2}> Two </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>{" "}
+			</Select>
+		</FormControl>
+	);
+};
 export function Organisation() {
 	return (
 		<div className={styles.organisationDiv}>
@@ -1189,7 +1278,7 @@ export function Module() {
 						<TableBody>
 							<TableRow>
 								<TableCell component="th" scope="row">
-									<BorderSelect holder="Role:Member" />
+									<BorderSelectModule holder="Role:Member" />
 								</TableCell>
 							</TableRow>
 							<Divider />

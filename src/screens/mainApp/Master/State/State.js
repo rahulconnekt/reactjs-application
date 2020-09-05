@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import styles from "./State.module.css";
-import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import Pagination from "@material-ui/lab/Pagination";
-import Dropdown from "../../../../components/Select/Select";
+import { useBorderSelectStyles } from "@mui-treasury/styles/select/border";
+import MenuItem from "@material-ui/core/MenuItem";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { blue, grey } from "@material-ui/core/colors";
 
 import StateTable from "../../../../components/StateTable/StateTable";
 
@@ -31,17 +32,111 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: "column",
 		justifyContent: "flex-start",
 	},
-}));
-
-const GreenCheckbox = withStyles({
-	root: {
-		color: "green",
-		"&$checked": {
-			color: "green",
+	select: {
+		minWidth: "6.5vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		background: "white",
+		color: grey[700],
+		borderColor: "#D7DAE2",
+		borderStyle: "solid",
+		borderWidth: "2px",
+		borderRadius: "4px",
+		paddingLeft: "5px",
+		paddingTop: "2px",
+		paddingBottom: "2px",
+		fontSize: "13px",
+		"&:hover": {
+			borderColor: grey[400],
+		},
+		"&:focus": {
+			borderRadius: "4px",
+			background: "white",
+			borderColor: blue[200],
 		},
 	},
-	checked: {},
-})((props) => <Checkbox color="default" {...props} />);
+	icon: {
+		color: grey[500],
+		right: 12,
+		position: "absolute",
+		userSelect: "none",
+		pointerEvents: "none",
+	},
+	list: {
+		paddingTop: 0,
+		paddingBottom: 0,
+		background: "white",
+		color: "#4d4f5c",
+		fontSize: "smaller",
+		"& li.Mui-selected": {
+			fontWeight: 400,
+		},
+	},
+}));
+
+const BorderSelect = (props1) => {
+	const [val, setVal] = useState(0);
+
+	const handleChange = (event) => {
+		setVal(event.target.value);
+	};
+
+	const borderSelectClasses = useBorderSelectStyles();
+	const menuProps = {
+		classes: {
+			list: borderSelectClasses.list,
+		},
+		anchorOrigin: {
+			vertical: "bottom",
+			horizontal: "left",
+		},
+		transformOrigin: {
+			vertical: "top",
+			horizontal: "left",
+		},
+		getContentAnchorEl: null,
+	};
+
+	const classes = useStyles();
+
+	const iconComponent = (props) => {
+		return (
+			<ExpandMoreIcon
+				className={props.className + " " + borderSelectClasses.icon}
+			/>
+		);
+	};
+
+	return (
+		<FormControl>
+			<Select
+				disableUnderline
+				labelId="inputLabel"
+				placeholder={props1.holder}
+				IconComponent={iconComponent}
+				className={classes.select}
+				MenuProps={menuProps}
+				value={val}
+				onChange={handleChange}
+				style={{
+					marginRight: "2%",
+				}}
+			>
+				<MenuItem value={0} disabled>
+					{" "}
+					{props1.holder}{" "}
+				</MenuItem>{" "}
+				<MenuItem value={1}> One </MenuItem>{" "}
+				<MenuItem value={2}> Two </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>{" "}
+			</Select>
+		</FormControl>
+	);
+};
 
 export default function Language() {
 	const classes = useStyles();
@@ -55,7 +150,6 @@ export default function Language() {
 	};
 	const [modal, setModal] = useState(false);
 	const toggleModal = () => setModal(!modal);
-	const [check, setCheck] = useState(false);
 
 	const [text_disabled, text_enabled] = useState(true);
 
@@ -99,7 +193,7 @@ export default function Language() {
 									color: "white",
 									borderRadius: "20px",
 									textTransform: "none",
-									width: "45%",
+									width: "109px",
 								}}
 							>
 								Search
@@ -107,7 +201,7 @@ export default function Language() {
 						</div>
 					</div>
 					<div className={styles.buttonAndFilter}>
-						<Dropdown holder="Filter" />
+						<BorderSelect holder="Filter" />
 						<Button
 							variant="contained"
 							color="secondary"
@@ -124,8 +218,12 @@ export default function Language() {
 						</Button>
 					</div>
 				</div>
-				<Modal isOpen={modal} toggle={toggleModal} centered={true}>
-					<ModalHeader toggle={toggleModal}>Add State</ModalHeader>
+				<Modal
+					isOpen={modal}
+					centered={true}
+					contentClassName={styles.modalc}
+				>
+					<ModalHeader>Add State</ModalHeader>
 					<ModalBody className={styles.modalContainer}>
 						<form className={classes.root}>
 							<TextField
@@ -152,7 +250,11 @@ export default function Language() {
 							variant="contained"
 							color="primary"
 							onClick={toggleModal}
-							style={{ marginRight: "2%" }}
+							style={{
+								marginRight: "2%",
+								backgroundColor: "#43425D",
+								textTransform: "none",
+							}}
 						>
 							Cancel
 						</Button>
@@ -160,6 +262,9 @@ export default function Language() {
 							variant="contained"
 							color="secondary"
 							onClick={toggleModal}
+							style={{
+								textTransform: "none",
+							}}
 						>
 							Save
 						</Button>

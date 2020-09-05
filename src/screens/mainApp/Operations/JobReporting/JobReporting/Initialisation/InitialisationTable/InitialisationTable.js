@@ -23,6 +23,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import download from "../../../../../../../../src/Assets/upload1.png";
+import Dropdown from "../../../../../../../components/Select/Select";
 import edit from "./edit.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 			maxHeight: "60%",
 		},
 		table: {
-			minWidth: 650,
+			minWidth: 750,
 			borderRadius: 0,
 			overflowY: "auto",
 			overflowX: "auto",
@@ -103,7 +104,7 @@ export default function Language() {
 				<div className={styles.searchBarDiv}>
 					<div className={styles.searchAndDrop}>
 						<div>
-							<div className={styles.searchBarDiv}>
+							<div className={styles.searchBar}>
 								<TextField
 									id="standard-search"
 									size="small"
@@ -112,8 +113,7 @@ export default function Language() {
 									style={{
 										borderColor: "#F5F6FA",
 										borderRadius: "4px",
-										marginBottom: "5%",
-										width: "60%",
+										marginRight: "2%",
 									}}
 									InputProps={{
 										startAdornment: icon,
@@ -123,38 +123,10 @@ export default function Language() {
 										focused: classes.focused,
 									}}
 								/>
-								<FormControl
-									variant="outlined"
-									style={{ marginLeft: "1%", height: "30%" }}
-								>
-									<InputLabel
-										htmlFor="outlined-age-native-simple"
-										style={{
-											alignText: "center",
-										}}
-									>
-										Filter
-									</InputLabel>
-									<Select
-										native
-										value={state.age}
-										onChange={handleChange}
-										style={{
-											maxHeight: "40%",
-											marginBottom: "5%",
-										}}
-										label="Filter"
-										inputProps={{
-											name: "Filter",
-											id: "outlined-age-native-simple",
-										}}
-									>
-										<option aria-label="None" value="" />
-										<option value={10}>Ten</option>
-										<option value={20}>Twenty</option>
-										<option value={30}>Thirty</option>
-									</Select>
-								</FormControl>
+								<Dropdown
+									holder="Filter"
+									style={{ marginLeft: "2%" }}
+								/>
 							</div>
 						</div>
 						<div className={styles.dropDownDiv}>
@@ -166,108 +138,96 @@ export default function Language() {
 									borderRadius: "20px",
 
 									textTransform: "none",
-									width: "45%",
+									width: "110px",
 									fontWeight: "lighter",
-									height: "70%",
-									marginBottom: "3%",
 									marginLeft: "5%",
 									marginRight: "5%",
 								}}
 							>
 								Search
 							</Button>
-							<FormControl variant="outlined">
-								<InputLabel
-									htmlFor="outlined-age-native-simple"
-									style={{ alignText: "center" }}
-								>
-									Week
-								</InputLabel>
-								<Select
-									native
-									value={state.age}
-									onChange={handleChange}
-									style={{
-										maxHeight: "80%",
-										marginBottom: "5%",
-									}}
-									label="Filter"
-									inputProps={{
-										name: "Filter",
-										id: "outlined-age-native-simple",
-									}}
-								>
-									<option aria-label="None" value="" />
-									<option value={10}>Ten</option>
-									<option value={20}>Twenty</option>
-									<option value={30}>Thirty</option>
-								</Select>
-							</FormControl>
+							<Dropdown holder="Week" />
 						</div>
 					</div>
 					<div className={styles.buttonAndFilter}>
-						<span
+						<div
 							style={{
-								textAlign: "center",
-								alignSelf: "center",
-								fontSize: "large",
-								color: "#43425D",
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "center",
+								justifyContent: "space-evenly",
 							}}
 						>
-							From Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
-						<span
-							style={{
-								textAlign: "center",
-								fontSize: "large",
-								alignSelf: "center",
-								color: "#43425D",
-							}}
-						>
-							To Date
-						</span>
-						<TextField
-							id="date"
-							variant="outlined"
-							type="date"
-							size="small"
-							defaultValue={new Date()}
-							className={classes.textField}
-							InputLabelProps={{
-								shrink: true,
-							}}
-							style={{
-								width: "20%",
-							}}
-						/>
+							<span
+								style={{
+									textAlign: "center",
+									alignSelf: "center",
+									fontSize: "large",
+									color: "#43425D",
+								}}
+							>
+								From Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "33%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
+							<span
+								style={{
+									textAlign: "center",
+									fontSize: "large",
+									alignSelf: "center",
+									color: "#43425D",
+								}}
+							>
+								To Date
+							</span>
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+									marginLeft: "2%",
+									width: "33%",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
+						</div>
 						<Button
 							variant="contained"
 							onClick={toggleModal}
 							style={{
 								textTransform: "none",
 								textAlign: "center",
-								// height: "95%",
-								marginBottom: "1%",
 								backgroundColor: "#3B86FF",
 								color: "white",
 							}}
 						>
 							Download
-							<img src={download} style={{ transform:"rotate(180deg)"}}/>
+							<img
+								src={download}
+								style={{ transform: "rotate(180deg)" }}
+							/>
 						</Button>
 					</div>
 				</div>
@@ -278,8 +238,6 @@ export default function Language() {
 							<TableHead
 								style={{
 									backgroundColor: "#F5F6FA",
-									position: "sticky",
-									top: "0",
 								}}
 							>
 								<TableRow>
@@ -320,84 +278,75 @@ export default function Language() {
 									</TableCell>
 								</TableRow>
 							</TableHead>
+
+							<TableBody>
+								{rows.map((row) => (
+									<TableRow key={row.name}>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											1
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											DEMO#
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											250
+										</TableCell>
+										<TableCell
+											align="left"
+											component="th"
+											scope="row"
+											style={{
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											250
+										</TableCell>
+									</TableRow>
+								))}
+							</TableBody>
 						</Table>
-						<div style={{ overflow: "auto", height: "20vw" }}>
-							<Table
-								aria-label="simple table"
-								className={classes.table}
-								style={{ tableLayout: "fixed" }}
-							>
-								<TableBody>
-									{rows.map((row) => (
-										<TableRow key={row.name}>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												1
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												DEMO#
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												250
-											</TableCell>
-											<TableCell
-												align="left"
-												component="th"
-												scope="row"
-												style={{
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												250
-											</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</div>
 					</div>
 				</div>
 
 				<div className={classes.root}></div>
 			</div>
-			<Pagination
-				count={5}
-				shape="rounded"
-				color="primary"
-				variant="outlined"
-				style={{
-					marginTop: "2%",
-					marginLeft: "78%",
-				}}
-			/>
+			<div className={styles.paginationDiv}>
+				<Pagination
+					count={5}
+					shape="rounded"
+					color="primary"
+					variant="outlined"
+				/>
+			</div>
 		</div>
 	);
 }

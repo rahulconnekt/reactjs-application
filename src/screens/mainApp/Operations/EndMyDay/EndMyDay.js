@@ -50,12 +50,24 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: "flex-start",
 	},
 	select: {
-		minWidth: "8.5vw",
+		minWidth: "7.5vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
 			minWidth: "25vw",
 		},
 		["@media (min-width: 376px) and (max-width: 425px)"]: {
 			minWidth: "25vw",
+		},
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "18vw",
+		},
+		["@media (min-width: 426px) and (max-width: 768px)"]: {
+			minWidth: "12vw",
+		},
+		["@media (min-width: 769px) and (max-width: 1024px)"]: {
+			minWidth: "10vw",
 		},
 		background: "white",
 		color: grey[700],
@@ -92,6 +104,10 @@ const useStyles = makeStyles((theme) => ({
 		"& li.Mui-selected": {
 			fontWeight: 400,
 		},
+	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
 	},
 }));
 function createData(name, calories, fat, carbs, protein) {
@@ -226,7 +242,7 @@ export default function Language() {
 									backgroundColor: "#43425D",
 									color: "white",
 									borderRadius: "20px",
-									width: "15%",
+									width: "109px",
 									textTransform: "none",
 									fontWeight: "lighter",
 									marginLeft: "1%",
@@ -236,7 +252,13 @@ export default function Language() {
 							</Button>
 						</div>
 						<div className={styles.buttonAndFilter}>
-							<span style={{ color: "#4D4F5C" }}>22/07/2020</span>
+							<span
+								style={{
+									color: "#4D4F5C",
+								}}
+							>
+								22/07/2020
+							</span>
 						</div>
 					</div>
 				</div>
@@ -247,8 +269,6 @@ export default function Language() {
 							<TableHead
 								style={{
 									backgroundColor: "#F5F6FA",
-									position: "sticky",
-									top: "0",
 								}}
 							>
 								<TableRow>
@@ -325,137 +345,130 @@ export default function Language() {
 									</TableCell>
 								</TableRow>
 							</TableHead>
+
+							<TableBody>
+								{rows.map((row) => (
+									<TableRow key={row.name}>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											DEMO#1
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										>
+											10
+										</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										></TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											style={{
+												textAlign: "center",
+												color: "#4D4F5C",
+												fontFamily:
+													"Regular 13px/20px Source Sans Pro",
+											}}
+										></TableCell>
+									</TableRow>
+								))}
+							</TableBody>
 						</Table>
-						<div style={{ overflow: "auto", height: "20vw" }}>
-							<Table
-								aria-label="simple table"
-								className={classes.table}
-								style={{ tableLayout: "fixed" }}
-							>
-								<TableBody>
-									{rows.map((row) => (
-										<TableRow key={row.name}>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												DEMO#1
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											>
-												10
-											</TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											></TableCell>
-											<TableCell
-												component="th"
-												scope="row"
-												style={{
-													textAlign: "center",
-													color: "#4D4F5C",
-													fontFamily:
-														"Regular 13px/20px Source Sans Pro",
-												}}
-											></TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</div>
 					</div>
 				</div>
 

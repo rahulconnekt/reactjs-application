@@ -137,16 +137,6 @@ const Dropdown = (props1) => {
 	);
 };
 
-const GreenCheckbox = withStyles({
-	root: {
-		color: "green",
-		"&$checked": {
-			color: "green",
-		},
-	},
-	checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
 export default function Language() {
 	const classes = useStyles();
 	const [state, setState] = React.useState({
@@ -205,6 +195,7 @@ export default function Language() {
 									color: "white",
 									borderRadius: "20px",
 									textTransform: "none",
+									marginLeft: "-10%",
 									width: "45%",
 									outline: "none",
 								}}
@@ -268,6 +259,7 @@ export default function Language() {
 								marginRight: "2%",
 								backgroundColor: "#43425D",
 								textTransform: "none",
+								width: "20%",
 							}}
 						>
 							Cancel
@@ -279,6 +271,7 @@ export default function Language() {
 							style={{
 								backgroundColor: "#F2134F",
 								textTransform: "none",
+								width: "20%",
 							}}
 						>
 							Save
@@ -291,16 +284,14 @@ export default function Language() {
 
 				<div className={classes.root}></div>
 			</div>
-			<Pagination
-				count={5}
-				shape="rounded"
-				color="primary"
-				variant="outlined"
-				style={{
-					marginTop: "2%",
-					marginLeft: "78%",
-				}}
-			/>
+			<div className={styles.paginationDiv}>
+				<Pagination
+					count={5}
+					shape="rounded"
+					color="primary"
+					variant="outlined"
+				/>
+			</div>
 		</div>
 	);
 }

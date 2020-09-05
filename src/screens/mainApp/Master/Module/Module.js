@@ -49,16 +49,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const GreenCheckbox = withStyles({
-	root: {
-		color: "green",
-		"&$checked": {
-			color: "green",
-		},
-	},
-	checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
 export default function Language() {
 	const classes = useStyles();
 
@@ -88,7 +78,6 @@ export default function Language() {
 									style={{
 										borderColor: "#F5F6FA",
 										borderRadius: "4px",
-										marginBottom: "5%",
 									}}
 									InputProps={{
 										startAdornment: icon,
@@ -110,8 +99,6 @@ export default function Language() {
 									textTransform: "none",
 									width: "45%",
 									fontWeight: "lighter",
-									marginBottom: "3%",
-									height: "90%",
 								}}
 							>
 								Search
@@ -126,9 +113,7 @@ export default function Language() {
 							style={{
 								textTransform: "none",
 								textAlign: "center",
-								width: "25%",
-								// height: "95%",
-								marginBottom: "3.2%",
+								width: "100px",
 								marginLeft: "75%",
 							}}
 						>

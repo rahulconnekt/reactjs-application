@@ -9,12 +9,24 @@ import { blue, grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles(() => ({
 	select: {
-		minWidth: "8.5vw",
+		minWidth: "7.5vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
 			minWidth: "25vw",
 		},
 		["@media (min-width: 376px) and (max-width: 425px)"]: {
 			minWidth: "25vw",
+		},
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "18vw",
+		},
+		["@media (min-width: 426px) and (max-width: 768px)"]: {
+			minWidth: "12vw",
+		},
+		["@media (min-width: 769px) and (max-width: 1024px)"]: {
+			minWidth: "10vw",
 		},
 		background: "white",
 		color: grey[700],

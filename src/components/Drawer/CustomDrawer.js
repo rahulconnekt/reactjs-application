@@ -86,7 +86,7 @@ import QC1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/QC/Q
 import QCTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/QC/QCTable/QCTable";
 import InitialisationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/Initialisation/InitialisationTable/InitialisationTable";
 import AuditJob1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/AuditJob/AuditJob";
-import InstallationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/AuditJob/AuditTable/AuditTable";
+import InstallationTable from "../../screens/mainApp/Operations/JobReporting/JobReporting/Installation/InstallationTable/InstallationTable";
 import Installation1 from "../../screens/mainApp/Operations/JobReporting/JobReporting/Installation/Installation";
 import OrganisationMain from "../../screens/mainApp/Organisation/OrganisationMain/OrganisationMain";
 import AddSub from "../../screens/mainApp/Properties/SubCategory/AddSubCategory/AddSub";
@@ -96,6 +96,10 @@ import UWHT from "../../screens/mainApp/Operations/JobReporting/JobReporting/Use
 import UserHistory from "../../screens/mainApp/Operations/UserHistory/UserHistory";
 import PV from "../../screens/mainApp/Visualise/PropertyVisualisation/PV";
 import EMD from "../../screens/mainApp/Operations/EndMyDay/EndMyDay";
+import SurveyRect from "../../screens/mainApp/Survey/SurveyBuilder/SB";
+import SR from "../../screens/mainApp/Survey/Recording/SurveyReporting/SR";
+import Audit from "../../screens/mainApp/Operations/JobCreation/Audit/Audit";
+import ContractorID from "../../screens/mainApp/Operations/ContractorID/ContractorID";
 
 import OTP from "../../screens/authentication/OTP/OTP";
 import Login from "../../screens/authentication/Login/Login";
@@ -109,6 +113,9 @@ const drawerWidth = 252;
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
+		["@media only screen and (max-width:800px)"]: {
+			overflowX: "auto",
+		},
 	},
 	appBar: {
 		backgroundColor: "white",
@@ -138,6 +145,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	drawerOpen: {
 		width: drawerWidth,
+
 		transition: theme.transitions.create("width", {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen,
@@ -177,6 +185,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	content: {
 		flexGrow: 1,
+		outline: "none",
+		["@media only screen and (max-width:800px)"]: {
+			marginBottom: "20%",
+		},
 	},
 	orange: {
 		color: theme.palette.getContrastText(deepOrange[500]),
@@ -241,7 +253,7 @@ export function OperationTab() {
 }
 export default function MiniDrawer(props) {
 	const classes = useStyles();
-	const [open, setOpen] = React.useState(true);
+	const [open, setOpen] = React.useState(false);
 	const [samadhanSubMenu, setSamadhanSubmenu] = useState(false);
 	const [masterSubMenu, setMasterSubmenu] = useState(false);
 	const [propertiesSubMenu, setPropertiesSubmenu] = useState(false);
@@ -890,7 +902,7 @@ export default function MiniDrawer(props) {
 				{/* <QC1 /> */}
 				{/* <AuditJob1 /> */}
 				{/* <DropDown /> */}
-				{/* <InitialisationTable /> */}
+				{/* <InitialisationTable />  */}
 				{/* <InstallationTable /> */}
 				{/* <Installation1 /> */}
 				{/* <InstZoom /> */}
@@ -904,7 +916,11 @@ export default function MiniDrawer(props) {
 				{/* <UWHT /> */}
 				{/* <UserHistory /> */}
 				{/* <PV /> */}
-				<EMD />
+				{/* <EMD /> */}
+				{/* <SurveyRect /> */}
+				{/* <Audit /> */}
+				{/* <SR /> */}
+				<ContractorID />
 			</main>
 		</div>
 	);

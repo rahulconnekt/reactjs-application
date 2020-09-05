@@ -1,5 +1,5 @@
 .main {
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     width: 100%;
     height: 100%;
     padding: 2%;
@@ -10,8 +10,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font: Source Sans Pro;
     font-size: 28px;
+    color: #43425D;
 }
 
 .tableDiv {
@@ -57,12 +57,13 @@
 .searchAndDrop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 60%;
 }
 
 .buttonAndFilter {
     display: flex;
+    width: 22%;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -86,15 +87,27 @@
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1160px) and (max-width: 1440px) {
     .searchAndDrop {
         width: 50%;
     }
     .dropDownDiv {
-        width: 60%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 30%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1160px) {
+    .searchAndDrop {
+        width: 50%;
+    }
+    .dropDownDiv {
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 35%;
     }
 }
 
@@ -103,7 +116,7 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 60%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 40%;
@@ -115,7 +128,7 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 60%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 40%;
@@ -127,7 +140,7 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 80%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 40%;
@@ -139,7 +152,7 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 80%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 40%;
@@ -151,7 +164,7 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 80%;
+        width: 30%;
     }
     .buttonAndFilter {
         width: 40%;

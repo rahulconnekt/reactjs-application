@@ -167,7 +167,6 @@ export default function OrganisationSamadhanID() {
 								style={{
 									borderColor: "#F5F6FA",
 									borderRadius: "4px",
-									width: "50%",
 								}}
 								InputProps={{
 									classes: { input: classes.input },
@@ -186,6 +185,7 @@ export default function OrganisationSamadhanID() {
 									borderRadius: "20px",
 									textTransform: "none",
 									marginLeft: "3%",
+									width: "109px",
 								}}
 							>
 								Search

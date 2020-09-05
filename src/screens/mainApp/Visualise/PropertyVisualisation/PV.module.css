@@ -16,7 +16,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     height: 100%;
-    margin-left: 1%;
     border: 1px solid #bbbbbb;
     box-shadow: -5px -3px 15px #00000014;
 }
@@ -34,6 +33,6 @@
 }
 
 .secondDiv {
-    width: 75%;
+    width: 10%;
     height: 100%;
 }

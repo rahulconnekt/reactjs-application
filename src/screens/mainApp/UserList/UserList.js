@@ -130,7 +130,7 @@ export function Dropdown(props1) {
 				<MenuItem value={0}> {props1.holder} </MenuItem>{" "}
 				<MenuItem value={1}> One </MenuItem>{" "}
 				<MenuItem value={2}> Two </MenuItem>{" "}
-				<MenuItem value={3}> Three </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>
 			</Select>
 		</FormControl>
 	);
@@ -201,8 +201,7 @@ export default function UserList() {
 							backgroundColor: "#0CD241",
 							color: "white",
 							height: "45px",
-							width: "25%",
-							alignSelf: "left",
+							width: "27%",
 							textTransform: "none",
 							outline: "none",
 							whiteSpace: "nowrap",
@@ -216,9 +215,7 @@ export default function UserList() {
 					toggle={toggleModal}
 					centered={true}
 					scrollable={true}
-					style={{
-						maxHeight: "10vw",
-					}}
+					contentClassName={styles.modalc}
 				>
 					<ModalHeader
 						style={{

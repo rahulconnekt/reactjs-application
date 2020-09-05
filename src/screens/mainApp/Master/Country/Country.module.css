@@ -66,6 +66,17 @@
     justify-content: flex-end;
 }
 
+.paginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.modalc {
+    margin-left: 0%;
+}
+
 @media (min-width: 1441px) and (max-width: 2560px) {
     .searchAndDrop {
         width: 40%;
@@ -97,6 +108,9 @@
     .dropDownDiv {
         width: 60%;
     }
+    .modalc {
+        margin-left: 5%;
+    }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
@@ -108,6 +122,9 @@
     }
     .buttonAndFilter {
         width: 65%;
+    }
+    .modalc {
+        margin-left: 15%;
     }
 }
 
@@ -121,6 +138,9 @@
     .buttonAndFilter {
         width: 65%;
     }
+    .modalc {
+        margin-left: 15%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
@@ -132,5 +152,8 @@
     }
     .buttonAndFilter {
         width: 85%;
+    }
+    .modalc {
+        margin-left: 15%;
     }
 }

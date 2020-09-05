@@ -8,7 +8,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { blue, grey } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 import styles from "./PV.module.css";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import Map from "./Map";
 const useStyles = makeStyles(() => ({
 	select: {
 		minWidth: "18vw",
@@ -183,15 +183,7 @@ export default function PV(props) {
 				</div>
 			</div>
 			<div className={styles.secondDiv}>
-				<Map
-					google={props.google}
-					zoom={14}
-					style={{ width: "100%", height: "100%" }}
-					initialCenter={{
-						lat: -1.2884,
-						lng: 36.8233,
-					}}
-				/>
+				<Map />
 			</div>
 		</div>
 	);

@@ -12,10 +12,13 @@
     justify-content: flex-start;
     align-items: center;
     font-size: 28px;
+    white-space: nowrap;
+    margin-bottom: 2%;
 }
 
 .container {
     width: 70%;
+    margin-left: 2%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -52,9 +55,48 @@
     justify-content: space-evenly;
 }
 
+.inDate1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.inDate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5%;
+}
+
 .label {
     color: #43425D;
     font-size: medium;
     text-align: center;
     white-space: nowrap;
+}
+
+@media only screen and (max-width:950px) {
+    .date {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .inDate1 {
+        margin-left: 0%;
+        margin-bottom: 5%;
+    }
+    .title {
+        font-size: x-large;
+    }
+    .container {
+        width: 35em;
+    }
+    .row3 {
+        margin-left: -2%;
+    }
 }

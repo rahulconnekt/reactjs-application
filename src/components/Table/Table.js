@@ -33,22 +33,43 @@ export default function SimpleTable() {
 	return (
 		<TableContainer component={Paper}>
 			<Table className={classes.table} aria-label="simple table">
-				<TableHead style={{ backgroundColor: "#d3d3d3" }}>
+				<TableHead style={{ backgroundColor: "#F5F6FA" }}>
 					<TableRow>
-						<TableCell align="left">NUMBER OF CARDS</TableCell>
-						<TableCell align="left">ORGANISATION</TableCell>
-						<TableCell align="left">DATE</TableCell>
+						<TableCell align="left" style={{ color: "#A3A6B4" }}>
+							NUMBER OF CARDS
+						</TableCell>
+						<TableCell align="left" style={{ color: "#A3A6B4" }}>
+							ORGANISATION
+						</TableCell>
+						<TableCell align="left" style={{ color: "#A3A6B4" }}>
+							DATE
+						</TableCell>
 						<TableCell align="center"></TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map((row) => (
 						<TableRow key={row.name}>
-							<TableCell align="left" component="th" scope="row">
+							<TableCell
+								align="left"
+								component="th"
+								scope="row"
+								style={{ color: "#4D4F5C" }}
+							>
 								100
 							</TableCell>
-							<TableCell align="left">ICIL</TableCell>
-							<TableCell align="left">12-02-2020</TableCell>
+							<TableCell
+								align="left"
+								style={{ color: "#4D4F5C" }}
+							>
+								ICIL
+							</TableCell>
+							<TableCell
+								align="left"
+								style={{ color: "#4D4F5C" }}
+							>
+								12-02-2020
+							</TableCell>
 							<TableCell
 								align="center"
 								style={{ color: "#3B86FF" }}

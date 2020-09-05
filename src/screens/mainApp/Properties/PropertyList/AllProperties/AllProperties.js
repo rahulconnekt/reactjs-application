@@ -88,10 +88,21 @@ export default function AllProperties() {
 						<Button
 							variant="contained"
 							style={{
+								backgroundColor: "#3B86FF",
+								color: "white",
+								textTransform: "none",
+							}}
+						>
+							Download
+						</Button>
+						<Button
+							variant="contained"
+							style={{
 								backgroundColor: "#F2134F",
 								color: "white",
 								textTransform: "none",
 								marginLeft: "2%",
+								marginRight: "2%",
 								width: "50%",
 							}}
 						>
@@ -102,6 +113,7 @@ export default function AllProperties() {
 							style={{
 								backgroundColor: "#3B86FF",
 								color: "white",
+								textTransform: "none",
 							}}
 						>
 							Upload

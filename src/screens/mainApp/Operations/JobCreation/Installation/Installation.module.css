@@ -1,5 +1,5 @@
 .main {
-    background-color: #f7f7f5;
+    background-color: #f9f9f9;
     width: 100%;
     height: 100%;
     padding: 2%;
@@ -10,7 +10,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: xx-large;
+    font-size: 28px;
+    color: #43425D;
 }
 
 .tableDiv {
@@ -56,7 +57,7 @@
 .searchAndDrop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 60%;
 }
 
@@ -67,6 +68,13 @@
     justify-content: space-between;
 }
 
+.paginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
 @media (min-width: 1441px) and (max-width: 2560px) {
     .searchAndDrop {
         width: 40%;
@@ -74,14 +82,32 @@
     .dropDownDiv {
         width: 60%;
     }
+    .buttonAndFilter {
+        width: 22%;
+    }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1160px) and (max-width: 1440px) {
     .searchAndDrop {
         width: 50%;
     }
     .dropDownDiv {
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1160px) {
+    .searchAndDrop {
         width: 50%;
+    }
+    .dropDownDiv {
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
     }
 }
 
@@ -90,7 +116,10 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 60%;
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
     }
 }
 
@@ -99,7 +128,10 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 60%;
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
     }
 }
 
@@ -108,7 +140,10 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 80%;
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
     }
 }
 
@@ -117,6 +152,21 @@
         width: 70%;
     }
     .dropDownDiv {
-        width: 80%;
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 319px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 30%;
+    }
+    .buttonAndFilter {
+        width: 30%;
     }
 }

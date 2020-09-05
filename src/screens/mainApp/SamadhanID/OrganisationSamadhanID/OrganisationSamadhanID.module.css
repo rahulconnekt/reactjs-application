@@ -28,7 +28,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 35%;
 }
 
 .searchText {
@@ -85,13 +84,13 @@
 
 @media (min-width: 1025px) and (max-width: 1440px) {
     .searchAndDrop {
-        width: 90%;
+        width: 70%;
     }
     .dropDownDiv {
         width: 45%;
     }
     .searchBar {
-        width: 50%;
+        width: 53%;
     }
 }
 

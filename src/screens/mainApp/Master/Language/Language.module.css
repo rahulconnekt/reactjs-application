@@ -56,13 +56,19 @@
 .searchAndDrop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 60%;
+    justify-content: flex-start;
 }
 
 .buttonAndFilter {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+}
+
+.paginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
     justify-content: flex-end;
 }
 
@@ -74,7 +80,7 @@
         width: 60%;
     }
     .buttonAndFilter {
-        width: 30%;
+        width: 40%;
     }
 }
 

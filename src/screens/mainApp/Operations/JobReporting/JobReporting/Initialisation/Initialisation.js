@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import styles from "./Initialisation.module.css";
 import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import DatePicker from "../../../../../../components/DatePicker/DatePicker";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import back from "./back.png";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Dropdown from "../../../../../../components/Select/Select";
 import Typography from "@material-ui/core/Typography";
+import { useBorderSelectStyles } from "@mui-treasury/styles/select/border";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { blue, grey } from "@material-ui/core/colors";
+
+import TextField from "@material-ui/core/TextField";
 const BorderLinearProgress = withStyles((theme) => ({
 	root: {
 		height: 5,
@@ -38,7 +43,124 @@ const useStyles = makeStyles({
 	pos: {
 		marginBottom: "12",
 	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
+	},
+	select: {
+		minWidth: "7.5vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "18vw",
+		},
+		["@media (min-width: 426px) and (max-width: 768px)"]: {
+			minWidth: "12vw",
+		},
+		["@media (min-width: 769px) and (max-width: 1024px)"]: {
+			minWidth: "10vw",
+		},
+		background: "white",
+		color: grey[700],
+		borderColor: "#D7DAE2",
+		borderStyle: "solid",
+		borderWidth: "2px",
+		borderRadius: "4px",
+		paddingLeft: "5px",
+		paddingTop: "2px",
+		paddingBottom: "2px",
+		fontSize: "13px",
+		"&:hover": {
+			borderColor: grey[400],
+		},
+		"&:focus": {
+			borderRadius: "4px",
+			background: "white",
+			borderColor: blue[200],
+		},
+	},
+	icon: {
+		color: grey[500],
+		right: 12,
+		position: "absolute",
+		userSelect: "none",
+		pointerEvents: "none",
+	},
+	list: {
+		paddingTop: 0,
+		paddingBottom: 0,
+		background: "white",
+		color: "#4d4f5c",
+		fontSize: "smaller",
+		"& li.Mui-selected": {
+			fontWeight: 400,
+		},
+	},
 });
+
+const Dropdown = (props1) => {
+	const [val, setVal] = useState(0);
+
+	const handleChange = (event) => {
+		setVal(event.target.value);
+	};
+
+	const borderSelectClasses = useBorderSelectStyles();
+	const menuProps = {
+		classes: {
+			list: borderSelectClasses.list,
+		},
+		anchorOrigin: {
+			vertical: "bottom",
+			horizontal: "left",
+		},
+		transformOrigin: {
+			vertical: "top",
+			horizontal: "left",
+		},
+		getContentAnchorEl: null,
+	};
+
+	const classes = useStyles();
+
+	const iconComponent = (props) => {
+		return (
+			<ExpandMoreIcon
+				className={props.className + " " + borderSelectClasses.icon}
+			/>
+		);
+	};
+
+	return (
+		<FormControl>
+			<Select
+				disableUnderline
+				labelId="inputLabel"
+				placeholder={props1.holder}
+				IconComponent={iconComponent}
+				className={classes.select}
+				MenuProps={menuProps}
+				value={val}
+				onChange={handleChange}
+				style={{
+					marginRight: "2%",
+				}}
+			>
+				<MenuItem value={0}> {props1.holder} </MenuItem>{" "}
+				<MenuItem value={1}> One </MenuItem>{" "}
+				<MenuItem value={2}> Two </MenuItem>{" "}
+				<MenuItem value={3}> Three </MenuItem>{" "}
+			</Select>
+		</FormControl>
+	);
+};
 
 export default function Initialisation() {
 	const classes = useStyles();
@@ -76,9 +198,43 @@ export default function Initialisation() {
 				</div>
 				<div className={styles.date}>
 					<span className={styles.label}>From Date</span>
-					<DatePicker width="80%" />
+					<TextField
+						id="standard-search"
+						size="small"
+						type="date"
+						variant="outlined"
+						style={{
+							borderColor: "#F5F6FA",
+							borderRadius: "4px",
+							width: "31%",
+							marginLeft: "2%",
+							marginRight: "2%",
+						}}
+						InputProps={{
+							classes: { input: classes.input },
+							color: "#4D4F5C",
+							focused: classes.focused,
+						}}
+					/>
 					<span className={styles.label}>To Date</span>
-					<DatePicker width="80%" />
+					<TextField
+						id="standard-search"
+						size="small"
+						type="date"
+						variant="outlined"
+						style={{
+							borderColor: "#F5F6FA",
+							borderRadius: "4px",
+							width: "31%",
+							marginLeft: "2%",
+							marginRight: "2%",
+						}}
+						InputProps={{
+							classes: { input: classes.input },
+							color: "#4D4F5C",
+							focused: classes.focused,
+						}}
+					/>
 				</div>
 			</div>
 			<div className={styles.cards}>

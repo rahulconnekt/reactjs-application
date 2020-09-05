@@ -1,0 +1,142 @@
+.main {
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #43425D;
+    font-size: 28px;
+    margin-left: 2%;
+}
+
+.tableDiv {
+    background-color: white;
+    margin-top: 2%;
+    padding: 0 1.5%;
+    margin-left: 2%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.dropDownDiv {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    align-items: flex-end;
+}
+
+.searchBarDiv {
+    padding: 1% 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.searchAndDrop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.buttonAndFilter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.paginationDiv {
+    margin-top: 2%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.modalc {
+    margin-left: 0%;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    .searchAndDrop {
+        width: 63%;
+    }
+    .dropDownDiv {
+        width: 60%;
+    }
+    .buttonAndFilter {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .searchAndDrop {
+        width: 95%;
+    }
+    .dropDownDiv {
+        width: 55%;
+    }
+    .modalc {
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .searchAndDrop {
+        width: 90%;
+    }
+    .dropDownDiv {
+        width: 60%;
+    }
+    .modalc {
+        margin-left: 15%;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .searchAndDrop {
+        width: 70%;
+    }
+    .dropDownDiv {
+        width: 80%;
+    }
+    .modalc {
+        margin-left: 15%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .searchAndDrop {
+        width: 100%;
+    }
+    .dropDownDiv {
+        width: 55%;
+    }
+    .modalc {
+        margin-left: 15%;
+    }
+}

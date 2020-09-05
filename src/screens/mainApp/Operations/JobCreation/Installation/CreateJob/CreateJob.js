@@ -63,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
 			fontWeight: 400,
 		},
 	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
+	},
 }));
 
 export function Dropdown(props1) {
@@ -171,13 +175,41 @@ export default function CreateJob() {
 				</div>
 				<div style={{ flexDirection: "column" }}>
 					<div className={styles.date}>
-						<div className={styles.inDate}>
+						<div className={styles.inDate1}>
 							<span className={styles.label}>Start Date</span>
-							<DatePicker />
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
 						</div>
 						<div className={styles.inDate}>
 							<span className={styles.label}>End Date</span>
-							<DatePicker />
+							<TextField
+								id="standard-search"
+								size="small"
+								type="date"
+								variant="outlined"
+								style={{
+									borderColor: "#F5F6FA",
+									borderRadius: "4px",
+								}}
+								InputProps={{
+									classes: { input: classes.input },
+									color: "#4D4F5C",
+									focused: classes.focused,
+								}}
+							/>
 						</div>
 					</div>
 				</div>
