@@ -99,6 +99,7 @@ import EMD from "../../screens/mainApp/Operations/EndMyDay/EndMyDay";
 import SurveyRect from "../../screens/mainApp/Survey/SurveyBuilder/SB";
 import SR from "../../screens/mainApp/Survey/Recording/SurveyReporting/SR";
 import Audit from "../../screens/mainApp/Operations/JobCreation/Audit/Audit";
+import ContractorID from "../../screens/mainApp/Operations/ContractorID/ContractorID";
 
 import OTP from "../../screens/authentication/OTP/OTP";
 import Login from "../../screens/authentication/Login/Login";
@@ -252,7 +253,7 @@ export function OperationTab() {
 }
 export default function MiniDrawer(props) {
 	const classes = useStyles();
-	const [open, setOpen] = React.useState(true);
+	const [open, setOpen] = React.useState(false);
 	const [samadhanSubMenu, setSamadhanSubmenu] = useState(false);
 	const [masterSubMenu, setMasterSubmenu] = useState(false);
 	const [propertiesSubMenu, setPropertiesSubmenu] = useState(false);
@@ -897,11 +898,11 @@ export default function MiniDrawer(props) {
 				{/* <JobList /> */}
 				{/* <VerifyDocument /> */}
 				{/* <RequestAccess /> */}
-				<Initialisation1 />
+				{/* <Initialisation1 /> */}
 				{/* <QC1 /> */}
 				{/* <AuditJob1 /> */}
 				{/* <DropDown /> */}
-				{/* <InitialisationTable /> */}
+				{/* <InitialisationTable />  */}
 				{/* <InstallationTable /> */}
 				{/* <Installation1 /> */}
 				{/* <InstZoom /> */}
@@ -919,6 +920,7 @@ export default function MiniDrawer(props) {
 				{/* <SurveyRect /> */}
 				{/* <Audit /> */}
 				{/* <SR /> */}
+				<ContractorID />
 			</main>
 		</div>
 	);

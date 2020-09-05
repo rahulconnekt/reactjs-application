@@ -215,9 +215,7 @@ export default function UserList() {
 					toggle={toggleModal}
 					centered={true}
 					scrollable={true}
-					style={{
-						maxHeight: "10vw",
-					}}
+					contentClassName={styles.modalc}
 				>
 					<ModalHeader
 						style={{

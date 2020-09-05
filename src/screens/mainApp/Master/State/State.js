@@ -193,7 +193,7 @@ export default function Language() {
 									color: "white",
 									borderRadius: "20px",
 									textTransform: "none",
-									width: "45%",
+									width: "109px",
 								}}
 							>
 								Search
@@ -218,8 +218,12 @@ export default function Language() {
 						</Button>
 					</div>
 				</div>
-				<Modal isOpen={modal} toggle={toggleModal} centered={true}>
-					<ModalHeader toggle={toggleModal}>Add State</ModalHeader>
+				<Modal
+					isOpen={modal}
+					centered={true}
+					contentClassName={styles.modalc}
+				>
+					<ModalHeader>Add State</ModalHeader>
 					<ModalBody className={styles.modalContainer}>
 						<form className={classes.root}>
 							<TextField

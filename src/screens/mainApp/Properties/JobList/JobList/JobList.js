@@ -86,7 +86,7 @@ export default function Language() {
 									borderRadius: "20px",
 									paddingLeft: "5%",
 									position: "relative",
-									width: "35%",
+									width: "109px",
 									textTransform: "none",
 									outline: "none",
 									marginLeft: "3%",

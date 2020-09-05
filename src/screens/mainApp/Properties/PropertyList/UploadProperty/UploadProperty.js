@@ -16,10 +16,10 @@ const useStyles = makeStyles(() => ({
 	select: {
 		minWidth: "30vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
-			minWidth: "25vw",
+			minWidth: "55vw",
 		},
 		["@media (min-width: 376px) and (max-width: 425px)"]: {
-			minWidth: "25vw",
+			minWidth: "30vw",
 		},
 		background: "white",
 		color: grey[700],
@@ -164,13 +164,14 @@ export default function UploadProperty() {
 								fontWeight: "lighter",
 								outline: "none",
 								marginRight: "60%",
-								width: "30%",
+								width: "195px",
 								padding: "1%",
 							}}
 						>
 							<span
 								style={{
 									alignSelf: "left",
+									marginLeft: "2%",
 									marginRight: "15%",
 									textTransform: "none",
 									whiteSpace: "nowrap",
@@ -178,7 +179,7 @@ export default function UploadProperty() {
 							>
 								Download Template
 							</span>
-							<div style={{ marginLeft: "5%" }}>
+							<div style={{ marginRight: "2%" }}>
 								<img src={download} />
 							</div>
 						</Button>

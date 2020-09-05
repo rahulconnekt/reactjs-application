@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: theme.spacing(2),
 		},
 	},
+	input: {
+		color: "#4D4F5C",
+		fontSize: "smaller",
+	},
 }));
 
 export default function AddJob() {
@@ -55,10 +59,64 @@ export default function AddJob() {
 					</div>
 					<div>
 						<div className={styles.row2}>
-							<span className={styles.label}>Start Date</span>
-							<DatePicker width="80%" />
-							<span className={styles.label}>End Date</span>
-							<DatePicker width="80%" />
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-evenly",
+									alignItems: "center",
+									marginBottom: "5%",
+								}}
+							>
+								<span
+									className={styles.label}
+									style={{
+										marginRight: "2%",
+									}}
+								>
+									Start Date
+								</span>
+								<TextField
+									id="standard-search"
+									size="small"
+									type="date"
+									variant="outlined"
+									style={{
+										borderColor: "#F5F6FA",
+										borderRadius: "4px",
+									}}
+									InputProps={{
+										classes: { input: classes.input },
+										color: "#4D4F5C",
+										focused: classes.focused,
+									}}
+								/>
+							</div>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "row",
+									justifyContent: "space-evenly",
+									alignItems: "center",
+								}}
+							>
+								<span className={styles.label1}>End Date</span>
+								<TextField
+									id="standard-search"
+									size="small"
+									type="date"
+									variant="outlined"
+									style={{
+										borderColor: "#F5F6FA",
+										borderRadius: "4px",
+									}}
+									InputProps={{
+										classes: { input: classes.input },
+										color: "#4D4F5C",
+										focused: classes.focused,
+									}}
+								/>
+							</div>
 						</div>
 					</div>
 					<div className={styles.row1}>

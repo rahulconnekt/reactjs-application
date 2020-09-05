@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "./Attendance.module.css";
+import styles from "./Contractor.module.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
-import Dropdown from "../../../components/Select/Select";
+import Dropdown from "../../../../components/Select/Select";
 import Pagination from "@material-ui/lab/Pagination";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Table from "@material-ui/core/Table";
@@ -13,6 +13,8 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import edit from "../../../../Assets/edit.png";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,11 +51,13 @@ const rows = [
 export default function OrganisationSamadhanID() {
 	const classes = useStyles();
 	let icon = <SearchIcon style={{ color: "#BCBCCB", alignSelf: "left" }} />;
+	const [modal, setModal] = useState(false);
+	const toggleModal = () => setModal(!modal);
 
 	return (
 		<div className={styles.main}>
 			<div className={styles.title}>
-				<span style={{ fontWeight: "light" }}>Attendance</span>
+				<span>Contractor ID History</span>
 			</div>
 			<div className={styles.tableDiv}>
 				<div className={styles.searchBarDiv}>
@@ -73,7 +77,7 @@ export default function OrganisationSamadhanID() {
 									}}
 									InputProps={{
 										startAdornment: icon,
-										placeholder: "Search..",
+										placeholder: "Search...",
 										classes: { input: classes.input },
 										color: "#4D4F5C",
 										focused: classes.focused,
@@ -150,36 +154,28 @@ export default function OrganisationSamadhanID() {
 										align="left"
 										style={{ color: "#A3A6B4" }}
 									>
-										USER
-									</TableCell>
-									<TableCell
-										align="left"
-										style={{ color: "#A3A6B4" }}
-									>
-										DATE
-									</TableCell>
-									<TableCell
-										align="left"
-										style={{ color: "#A3A6B4" }}
-									>
-										START TIME
-									</TableCell>
-									<TableCell
-										align="left"
-										style={{ color: "#A3A6B4" }}
-									>
-										END TIME
-									</TableCell>
-									<TableCell
-										align="left"
-										style={{ color: "#A3A6B4" }}
-									>
-										AVERAGE TIME
+										CONTRACTOR ID
 									</TableCell>
 									<TableCell
 										align="left"
 										style={{ color: "#A3A6B4" }}
 									></TableCell>
+									<TableCell
+										align="center"
+										style={{ color: "#A3A6B4" }}
+									>
+										TOTAL NO. OF MAPPED PROPERTIES
+									</TableCell>
+									<TableCell
+										align="left"
+										style={{ color: "#A3A6B4" }}
+									></TableCell>
+									<TableCell
+										align="center"
+										style={{ color: "#A3A6B4" }}
+									>
+										NO. OF PEOPLE PRESENT
+									</TableCell>
 									<TableCell
 										align="left"
 										style={{ color: "#A3A6B4" }}
@@ -193,39 +189,91 @@ export default function OrganisationSamadhanID() {
 											align="left"
 											style={{ color: "#4D4F5C" }}
 										>
-											ICIL
+											DEMO#1
 										</TableCell>
 										<TableCell
 											align="left"
 											style={{ color: "#4D4F5C" }}
+										></TableCell>
+										<TableCell
+											align="center"
+											style={{ color: "#4D4F5C" }}
 										>
-											00/00/00
+											1500
 										</TableCell>
 										<TableCell
 											align="left"
 											style={{ color: "#4D4F5C" }}
+										></TableCell>
+										<TableCell
+											align="center"
+											style={{
+												color: "#4D4F5C",
+											}}
 										>
-											00:12
+											2500
+											<img
+												src={edit}
+												style={{
+													paddingLeft: "2%",
+													cursor: "pointer",
+												}}
+												onClick={toggleModal}
+											/>
 										</TableCell>
 										<TableCell
 											align="left"
 											style={{ color: "#4D4F5C" }}
-										>
-											12:00
-										</TableCell>
-										<TableCell
-											align="left"
-											style={{ color: "#4D4F5C" }}
-										>
-											11.45
-										</TableCell>
-										<TableCell align="center"></TableCell>
-										<TableCell align="center"></TableCell>
+										></TableCell>
 									</TableRow>
 								))}
 							</TableBody>
 						</Table>
 					</TableContainer>
+					<Modal
+						isOpen={modal}
+						centered={true}
+						contentClassName={styles.modalc}
+					>
+						<ModalHeader>Update No. of People Present</ModalHeader>
+						<ModalBody className={styles.modalContainer}>
+							<form className={classes.root}>
+								<TextField
+									className={classes.root}
+									variant="outlined"
+									style={{ width: "80%" }}
+								/>
+							</form>
+						</ModalBody>
+						<ModalFooter>
+							<Button
+								variant="contained"
+								color="primary"
+								onClick={toggleModal}
+								style={{
+									marginRight: "2%",
+									backgroundColor: "#43425D",
+									textTransform: "none",
+									width: "20%",
+								}}
+							>
+								Cancel
+							</Button>
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={toggleModal}
+								style={{
+									backgroundColor: "#F2134F",
+									textTransform: "none",
+									marginRight: "2%",
+									width: "20%",
+								}}
+							>
+								Save
+							</Button>
+						</ModalFooter>
+					</Modal>
 				</div>
 			</div>
 			<div className={styles.paginationDiv}>

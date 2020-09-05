@@ -16,21 +16,33 @@ const useStyles = makeStyles((theme) => ({
 		"& > *": {
 			margin: theme.spacing(1),
 			width: "50em",
+			["@media only screen and (max-width:860px)"]: {
+				width: "30em",
+			},
 		},
 	},
 	select: {
-		minWidth: "20.5vw",
-		["@media (min-width: 321px) and (max-width: 374px)"]: {
-			maxWidth: "90vw",
+		minWidth: "2.5vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
 		},
-		["@media (min-width: 375px) and (max-width: 400px)"]: {
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "18vw",
+		},
+		["@media (min-width: 426px) and (max-width: 859px)"]: {
+			minWidth: "1vw",
+		},
+		["@media (min-width: 860px) and (max-width: 1024px)"]: {
 			minWidth: "30vw",
 		},
-		["@media (max-width:320px)"]: {
-			minWidth: "30vw",
-		},
-		["@media (min-width: 426px) and (max-width: 768px)"]: {
-			minWidth: "30vw",
+		["@media (min-width: 1025px) and (max-width: 1440px)"]: {
+			minWidth: "25vw",
 		},
 		background: "white",
 		color: grey[700],
@@ -223,11 +235,11 @@ export default function Profile(props) {
 					style={{ width: "100%" }}
 				/>
 			</div>
-			<div className={styles.row1}>
+			<div className={styles.row2}>
 				<Dropdown holder="Blood Group" />
 				<Dropdown holder="Blood Group" />
 			</div>
-			<div className={styles.row1}>
+			<div className={styles.row2}>
 				<Dropdown holder="Blood Group" />
 				<TextField
 					id="outlined-basic"

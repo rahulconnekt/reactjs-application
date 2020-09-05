@@ -220,7 +220,11 @@ export default function Language() {
 						</Button>
 					</div>
 				</div>
-				<Modal isOpen={modal} toggle={toggleModal} centered={true}>
+				<Modal
+					isOpen={modal}
+					centered={true}
+					contentClassName={styles.modalc}
+				>
 					<ModalHeader toggle={toggleModal}>Add Country</ModalHeader>
 					<ModalBody className={styles.modalContainer}>
 						<form className={classes.root}>

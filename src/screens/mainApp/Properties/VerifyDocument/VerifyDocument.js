@@ -105,7 +105,12 @@ export default function Language() {
 				<div className={styles.table}>
 					<VerifyDocumentTable togglingModal={toggleModal} />
 				</div>
-				<Modal isOpen={modal} toggle={toggleModal} centered={true}>
+				<Modal
+					isOpen={modal}
+					toggle={toggleModal}
+					centered={true}
+					contentClassName={styles.modalc}
+				>
 					<ModalBody className={styles.modalContainer}>
 						<div className={styles.innerDiv}>
 							<span

@@ -19,6 +19,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Pagination from "@material-ui/lab/Pagination";
+import xyz from "../../../../../Assets/edit.png";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -517,7 +518,9 @@ export default function Audit() {
 									>
 										9123456789
 									</TableCell>
-									<TableCell></TableCell>
+									<TableCell>
+										<img src={xyz} />
+									</TableCell>
 									<TableCell>
 										<Dropdown1 holder="Approved" />
 									</TableCell>
