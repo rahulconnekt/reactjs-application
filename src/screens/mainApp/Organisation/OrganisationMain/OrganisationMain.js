@@ -162,6 +162,40 @@ const useStyles = makeStyles((theme) => ({
 			borderColor: blue[200],
 		},
 	},
+	selectPeople: {
+		minWidth: "8vw",
+		["@media (min-width: 320px) and (max-width: 375px)"]: {
+			minWidth: "25vw",
+		},
+		["@media (min-width: 376px) and (max-width: 425px)"]: {
+			minWidth: "25vw",
+		},
+		background: "#43425D",
+		color: "#43425D",
+		borderColor: "#D7DAE2",
+		borderStyle: "solid",
+		borderWidth: "2px",
+		borderRadius: "4px",
+		paddingLeft: "5px",
+		paddingTop: "2px",
+		paddingBottom: "2px",
+		fontSize: "13px",
+		"&:hover": {
+			borderColor: grey[400],
+		},
+		"&:focus": {
+			borderRadius: "4px",
+			background: "white",
+			borderColor: blue[200],
+		},
+	},
+	iconPeople: {
+		color: "white",
+		right: 12,
+		position: "absolute",
+		userSelect: "none",
+		pointerEvents: "none",
+	},
 	selectModule: {
 		minWidth: "8.5vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
@@ -214,7 +248,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const BorderSelect = (props1) => {
+const BorderSelectPeople = (props1) => {
 	const [val, setVal] = React.useState(0);
 
 	const handleChange = (event) => {
@@ -247,7 +281,7 @@ const BorderSelect = (props1) => {
 					" " +
 					borderSelectClasses.icon +
 					" " +
-					classes.icon
+					classes.iconPeople
 				}
 			/>
 		);
@@ -260,7 +294,7 @@ const BorderSelect = (props1) => {
 				labelId="inputLabel"
 				placeholder="Role"
 				IconComponent={iconComponent}
-				className={classes.select}
+				className={classes.selectPeople}
 				MenuProps={menuProps}
 				value={val}
 				onChange={handleChange}
@@ -708,7 +742,7 @@ export function People() {
 									<TableCell>Member</TableCell>
 
 									<TableCell>
-										<Dropdown holder="Private" />
+										<BorderSelectPeople holder="Private" />
 									</TableCell>
 								</TableRow>
 							))}
@@ -1766,7 +1800,7 @@ export function ManageAccess() {
 						<TableBody>
 							<TableRow>
 								<TableCell component="th" scope="row">
-									<BorderSelect holder="Role:Member" />
+									<Dropdown holder="Role:Member" />
 								</TableCell>
 							</TableRow>
 							<Divider />
@@ -2694,20 +2728,20 @@ export default function Main() {
 				<Teams />
 			</TabPanel>
 			{/* <TabPanel value={value} index={1}>
-							<ManageAccess />
-						</TabPanel> */}
+				<ManageAccess />
+			</TabPanel> */}
 			{/* <TabPanel value={value} index={1}>
 				<VerifyDocument />
 			</TabPanel> */}
-			{/* <TabPanel value={value} index={1}>
+			<TabPanel value={value} index={1}>
 				<People />
-			</TabPanel> */}
+			</TabPanel>
 			<TabPanel value={value} index={6}>
 				<Security />
 			</TabPanel>
-			<TabPanel value={value} index={1}>
+			{/* <TabPanel value={value} index={1}>
 				<MemberPermission />
-			</TabPanel>
+			</TabPanel> */}
 		</div>
 	);
 }

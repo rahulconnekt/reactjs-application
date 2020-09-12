@@ -859,7 +859,7 @@ export default function MiniDrawer(props) {
 				<div className={classes.toolbar} />
 				{props.page}
 				{/* <AddOrganisation /> */}
-				{/* <SamadhanIDViewAll /> */}
+				{/* <SamadhanIDViewAll />/ */}
 				{/* <Stepper /> */}
 				{/* <TreeView /> */}
 				{/* <UserList /> */}
@@ -902,7 +902,7 @@ export default function MiniDrawer(props) {
 				{/* <QC1 /> */}
 				{/* <AuditJob1 /> */}
 				{/* <DropDown /> */}
-				{/* <InitialisationTable />  */}
+				{/* <InitialisationTable /> */}
 				{/* <InstallationTable /> */}
 				{/* <Installation1 /> */}
 				{/* <InstZoom /> */}
@@ -920,7 +920,7 @@ export default function MiniDrawer(props) {
 				{/* <SurveyRect /> */}
 				{/* <Audit /> */}
 				{/* <SR /> */}
-				<ContractorID />
+				{/* <ContractorID /> */}
 			</main>
 		</div>
 	);

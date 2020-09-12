@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	select: {
-		minWidth: "2.5vw",
+		minWidth: "20.5vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
 			minWidth: "25vw",
 		},
