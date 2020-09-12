@@ -196,6 +196,18 @@ const useStyles = makeStyles((theme) => ({
 		userSelect: "none",
 		pointerEvents: "none",
 	},
+	listPeople: {
+		paddingTop: 0,
+		minWidth: "15em",
+		paddingBottom: 0,
+		background: "white",
+		alignSelf: "left",
+		color: "#4d4f5c",
+		fontSize: "smaller",
+		"& li.Mui-selected": {
+			fontWeight: 400,
+		},
+	},
 	selectModule: {
 		minWidth: "8.5vw",
 		["@media (min-width: 320px) and (max-width: 375px)"]: {
@@ -254,11 +266,11 @@ const BorderSelectPeople = (props1) => {
 	const handleChange = (event) => {
 		setVal(event.target.value);
 	};
-
+	const classes = useStyles();
 	const borderSelectClasses = useBorderSelectStyles();
 	const menuProps = {
 		classes: {
-			list: borderSelectClasses.list,
+			list: classes.listPeople,
 		},
 		anchorOrigin: {
 			vertical: "bottom",
@@ -270,8 +282,6 @@ const BorderSelectPeople = (props1) => {
 		},
 		getContentAnchorEl: null,
 	};
-
-	const classes = useStyles();
 
 	const iconComponent = (props) => {
 		return (

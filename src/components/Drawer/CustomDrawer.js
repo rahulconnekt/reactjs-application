@@ -917,7 +917,7 @@ export default function MiniDrawer(props) {
 				{/* <UserHistory /> */}
 				{/* <PV /> */}
 				{/* <EMD /> */}
-				{/* <SurveyRect /> */}
+				<SurveyRect />
 				{/* <Audit /> */}
 				{/* <SR /> */}
 				{/* <ContractorID /> */}
